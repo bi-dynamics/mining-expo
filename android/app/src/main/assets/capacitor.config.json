@@ -1,6 +1,6 @@
 {
-	"appId": "ionic.conference.app",
-	"appName": "ionic-conference-app",
+	"appId": "com.bid.miningexpo",
+	"appName": "Mining Expo",
 	"webDir": "www",
 	"bundledWebRuntime": false,
 	"plugins": {
@@ -16,6 +16,13 @@
 			"spinnerColor": "#999999",
 			"splashFullScreen": true,
 			"splashImmersive": true
+		},
+		"PushNotifications": {
+			"presentationOptions": [
+				"badge",
+				"sound",
+				"alert"
+			]
 		}
 	}
 }

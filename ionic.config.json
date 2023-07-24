@@ -1,7 +1,8 @@
 {
-  "name": "ionic-conference-app",
+  "name": "mining-expo",
   "type": "angular",
   "integrations": {
-    "capacitor": {}
+    "capacitor": {},
+    "cordova": {}
   }
 }

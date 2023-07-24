@@ -1,55 +1,47 @@
-<ion-header>
-  <ion-toolbar>
-    <ion-buttons slot="start">
-      <ion-menu-button></ion-menu-button>
-    </ion-buttons>
-
-    <ion-title>Login</ion-title>
-  </ion-toolbar>
-</ion-header>
-
 <ion-content>
-  <div class="login-logo">
-    <img src="assets/img/appicon.svg" alt="Ionic logo">
+<div class="heading">
+  <h1>Login</h1>
+  <p>Please login to continue.</p>
+</div>
+  <div class="social-login">
+    <p>Enter through social networks</p>
+    <div class="links">
+      <ion-button class="google" routerLink="/app/tabs/schedule">
+        <ion-icon name="logo-google"></ion-icon>
+      </ion-button>
+      <ion-button class="facebook" routerLink="/app/tabs/schedule">
+        <ion-icon name="logo-facebook"></ion-icon>
+      </ion-button>
+    </div>
   </div>
 
-  <div class="login-form">
-    <form #loginForm="ngForm" novalidate>
-      <ion-input
-        label="Username"
-        labelPlacement="stacked"
-        fill="solid"
-        [(ngModel)]="login.username"
-        name="username"
-        type="text"
-        #username="ngModel"
-        spellcheck="false"
-        autocapitalize="off"
-        errorText="Username is required"
-        required>
-      </ion-input>
 
-      <ion-input
-        label="Password"
-        labelPlacement="stacked"
-        fill="solid"
-        [(ngModel)]="login.password"
-        name="password"
-        type="password"
-        #password="ngModel"
-        errorText="Password is required"
-        required>
-      </ion-input>
-
-      <ion-row>
-        <ion-col>
-          <ion-button (click)="onLogin(loginForm)" type="submit" expand="block">Login</ion-button>
-        </ion-col>
-        <ion-col>
-          <ion-button (click)="onSignup()" color="light" expand="block">Signup</ion-button>
-        </ion-col>
-      </ion-row>
-    </form>
+  <form (ngSubmit)="login()" [formGroup]="credentials">
+  <div class="email-login">
+    <p>Or login with email</p>
+    <div class="formfield">
+      <input type="email" formControlName="email" name="email" id="email">
+      <label for="email" placeholder="Email">Email</label>
+      <ion-note slot="error" *ngIf="(email.dirty || email.touched) && email.errors"
+      >Email is invalid</ion-note>
+    </div>
+    <div class="formfield">
+      <input type="password" formControlName="password" name="password" id="password">
+      <label for="password" placeholder="Password">Password</label>
+      <ion-note slot="error" *ngIf="(password.dirty || password.touched) && password.errors"
+      >Password needs to be 6 characters</ion-note>
+    </div>
+    <div class="other-links">
+      <div class="remember-me">
+        <ion-checkbox></ion-checkbox>
+        <p>Remember Me</p>
+      </div>
+      <p class="forgot">Forgot Password</p>
+    </div>
   </div>
-
+  <div class="login-button">
+    <ion-button type="submit" class="login" [disabled]="!credentials.valid">Login</ion-button>
+    <p>Don't have an account?<span routerLink="/signup">  Signup</span><p>
+    </div>
+  </form>
 </ion-content>

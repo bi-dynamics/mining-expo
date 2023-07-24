@@ -24,18 +24,20 @@
     <h3 class="ion-padding-top ion-padding-start">About</h3>
 
     <p class="ion-padding-start ion-padding-end">
-      The Ionic Conference is a one-day conference on {{ conferenceDate | date: 'mediumDate' }} featuring talks from the Ionic team. It is focused on Ionic applications being built with Ionic Framework. This includes migrating apps to the latest version of the framework, Angular concepts, Webpack, Sass, and many other technologies used in Ionic 2. Tickets are completely sold out, and we’re expecting more than 1000 developers – making this the largest Ionic conference ever!
+      The Chamber of Mines will be hosting its 10th Mining Expo & Conference on 30th & 31st August 2023 at the Windhoek Showgrounds. RMB is the proud sponsor and title partner of this event, which includes the Mining Conference, Supplier’s Platform, Business 2 Business networking for exhibitors and the annual networking cocktail function.  
     </p>
-
+    <div class="theme">
+    <h5 class="ion-padding-top ion-padding-start">Namibia’s role in the sustainable supply of minerals to support the global energy transition</h5>
+    </div>
     <h3 class="ion-padding-top ion-padding-start">Details</h3>
 
     <ion-list lines="none">
       <ion-item>
         <ion-select label="Location" [(ngModel)]="location" [interfaceOptions]="selectOptions">
-          <ion-select-option value="madison">Madison, WI</ion-select-option>
-          <ion-select-option value="austin">Austin, TX</ion-select-option>
-          <ion-select-option value="chicago">Chicago, IL</ion-select-option>
-          <ion-select-option value="seattle">Seattle, WA</ion-select-option>
+          <ion-select-option value="madison">Windhoek Showgrounds</ion-select-option>
+          <ion-select-option value="austin">Aussanplatz</ion-select-option>
+          <ion-select-option value="chicago">Windhoek</ion-select-option>
+          <ion-select-option value="seattle">Namibia</ion-select-option>
         </ion-select>
       </ion-item>
       <ion-item button="true" id="open-date-input">
@@ -59,7 +61,7 @@
           Wifi network
         </ion-label>
         <ion-label class="ion-text-end">
-          ica{{conferenceDate | date: 'y'}}
+          miningexpo{{conferenceDate | date: 'y'}}
         </ion-label>
       </ion-item>
       <ion-item>
@@ -67,7 +69,7 @@
           Password
         </ion-label>
         <ion-label class="ion-text-end">
-          makegoodthings
+          miningexpo
         </ion-label>
       </ion-item>
     </ion-list>
