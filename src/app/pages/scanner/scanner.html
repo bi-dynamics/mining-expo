@@ -1,5 +1,5 @@
 <ion-header [style.visibility]="content_visibility">
-  <ion-toolbar color="secondary">
+  <ion-toolbar color="warning">
     <ion-buttons slot="start">
       <ion-menu-button></ion-menu-button>
     </ion-buttons>
@@ -9,12 +9,12 @@
 
 <ion-content [style.visibility]="content_visibility">
    <ion-card-content>
-   <qrcode 
+   <qrcode
    [qrdata]="qrCodeString"
-   [width]="356" 
-   [errorCorrectionLevel]="'M'"></qrcode>    
+   [width]="356"
+   [errorCorrectionLevel]="'M'"></qrcode>
   </ion-card-content>
-  <ion-button expand="block" (click)="startScan()">
+  <ion-button color="warning" expand="block" (click)="startScan()">
   <ion-icon name="scan" slot="start"></ion-icon>
   Scan
 </ion-button>
@@ -23,9 +23,24 @@
   <ion-label class="ion-text-wrap">Scanned Result: {{scannedResult}}</ion-label>
 </ion-item>
 
-<ion-row class="scanner-buttons">
+<!-- <ion-row class="scanner-buttons">
   <ion-col class="ion-no-padding">
-    <ion-button expand="full" (click)="stopScan()">Stop</ion-button>
+    <ion-button expand="full" (click)="stopScan()">Stop Scan</ion-button>
+  </ion-col>
+</ion-row> -->
+
+<ion-row>
+  <h4><span>Please Select an Action:</span></h4>
+  <select (change)="selectChangeHandler($event)">
+    <option value="select">Select</option>
+    <option value="in">In</option>
+    <option value="out">Out</option>
+  </select>
+</ion-row>
+
+<ion-row>
+  <ion-col class="ion-no-padding">
+    <ion-button color="warning" expand="full" (click)="addScan()">Submit</ion-button>
   </ion-col>
 </ion-row>
 </ion-content>

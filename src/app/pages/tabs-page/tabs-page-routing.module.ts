@@ -2,7 +2,7 @@ import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { TabsPage } from './tabs-page';
 import { SchedulePage } from '../schedule/schedule';
-
+import { Tab1Page } from '../tab1/tab1.page';
 
 const routes: Routes = [
   {
@@ -10,26 +10,25 @@ const routes: Routes = [
     component: TabsPage,
     children: [
       {
-        path: 'schedule',
+        path: '',
         children: [
           {
-            path: '',
-            component: SchedulePage,
+            path: 'agenda',
+            component: Tab1Page,
           },
           {
-            path: 'session/:sessionId',
-            loadChildren: () => import('../session-detail/session-detail.module').then(m => m.SessionDetailModule)
+            path: 'agenda',
+            loadChildren: () => import('../tab1/tab1.module').then(m => m.Tab1PageModule)
           }
         ]
       },
-      
-               
+
       {
         path: 'speakers',
         children: [
           {
             path: '',
-            loadChildren: () => import('../speaker-list/speaker-list.module').then(m => m.SpeakerListModule)
+            loadChildren: () => import('../speaker-list/speaker-list.module').then(m => m.SpeakersPageModule)
           },
           {
             path: 'session/:sessionId',
@@ -53,8 +52,22 @@ const routes: Routes = [
             loadChildren: () => import('../session-detail/session-detail.module').then(m => m.SessionDetailModule)
           },
           {
-            path: 'exhibitor-details/:exhibitorId',
-            loadChildren: () => import('../exhibitor-detail/exhibitor-detail.module').then(m => m.ExhibitorDetailModule)
+            path: 'details/:id',
+            loadChildren: () => import('../details/details.module').then(m => m.DetailsModule)
+          }
+        ]
+      },
+
+  {
+    path: 'schedule',
+    loadChildren: () => import('../schedule/schedule-routing.module').then(m => m.SchedulePageRoutingModule)
+  },
+      {
+        path: 'exposchedule',
+        children: [
+          {
+            path: '',
+            loadChildren: () => import('../expo-schedule/expo-schedule.module').then(m => m.ExpoScheduleModule)
           }
         ]
       },
@@ -64,6 +77,33 @@ const routes: Routes = [
           {
             path: '',
             loadChildren: () => import('../map/map.module').then(m => m.MapModule)
+          }
+        ]
+      },
+      {
+        path: 'broadcasting',
+        children: [
+          {
+            path: '',
+            loadChildren: () => import('../broadcasting/broadcasting.module').then(m => m.BroadcastingPageModule)
+          }
+        ]
+      },
+      {
+        path: 'supplier',
+        children: [
+          {
+            path: '',
+            loadChildren: () => import('../supplierplatform/supplier.module').then(m => m.SupplierPageModule)
+          }
+        ]
+      },
+      {
+        path: 'btb',
+        children: [
+          {
+            path: '',
+            loadChildren: () => import('../btb/btb.module').then(m => m.BtbPageModule)
           }
         ]
       },
@@ -85,7 +125,7 @@ const routes: Routes = [
           }
         ]
       },
-      
+
       {
         path: 'about',
         children: [
@@ -95,10 +135,10 @@ const routes: Routes = [
           }
         ]
       },
-            
+
       {
         path: '',
-        redirectTo: '/app/tabs/schedule',
+        redirectTo: '/agenda',
         pathMatch: 'full'
       }
     ]

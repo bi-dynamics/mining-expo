@@ -2,6 +2,7 @@ import { Component } from '@angular/core';
 import { NgForm } from '@angular/forms';
 
 import { AlertController, ToastController } from '@ionic/angular';
+// import { DataService } from '../../services/data.service';
 
 
 @Component({
@@ -10,15 +11,21 @@ import { AlertController, ToastController } from '@ionic/angular';
   styleUrls: ['./register.scss'],
 })
 export class RegisterPage {
-  submitted = false;
-  supportMessage: string;
 
-  constructor(
-    public alertCtrl: AlertController,
-    public toastCtrl: ToastController
-  ) { }
+  constructor() {
+    // this.dataService.getSpeakers().subscribe(res => {
+      // console.log(res);
+    // })
+  }
 
-  async ionViewDidEnter() {
+  registerDelegate() {
+    { // Redirect to an external URL
+     window.location.href = 'https://miningexponamibia.com/delegate-registration/';
+     // Implement your registration logic here, e.g., navigate to a registration page
+   }
+ }
+
+  /* async ionViewDidEnter() {
     const toast = await this.toastCtrl.create({
       message: 'This does not actually send a support request.',
       duration: 3000
@@ -38,7 +45,7 @@ export class RegisterPage {
         duration: 3000
       });
       await toast.present();
-    }
+    } */
   }
 
   // If the user enters text in the support question and then navigates
@@ -62,4 +69,5 @@ export class RegisterPage {
   //     await alert.present();
   //   });
   // }
-}
+
+

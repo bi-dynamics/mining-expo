@@ -1,26 +1,16 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { checkTutorialGuard } from './providers/check-tutorial.guard';
-import {
-  redirectUnauthorizedTo,
-  redirectLoggedInTo,
-  canActivate
-} from '@angular/fire/auth-guard';
-
-const redirectUnauthorizedToLogin = () => redirectUnauthorizedTo(['']);
-const redirectLoggedInToSchedule = () => redirectLoggedInTo(['schedule']);
 
 const routes: Routes = [
   {
     path: '',
-    loadChildren: () => import('./pages/login/login.module').then(m => m.LoginModule),
-    pathMatch: 'full',
-    ...canActivate(redirectLoggedInToSchedule)
+    loadChildren: () => import('./pages/tutorial/tutorial.module').then(m => m.TutorialModule),
+    pathMatch: 'full'
   },
   {
     path: 'schedule',
-    loadChildren: () => import('./pages/schedule/schedule.module').then(m => m.ScheduleModule),
-    ...canActivate(redirectUnauthorizedToLogin)
+    loadChildren: () => import('./pages/schedule/schedule.module').then(m => m.ScheduleModule)
   },
   {
     path: 'account',
@@ -32,8 +22,7 @@ const routes: Routes = [
   },
   {
     path: 'login',
-    loadChildren: () => import('./pages/login/login.module').then(m => m.LoginModule),
-    ...canActivate(redirectLoggedInToSchedule)
+    loadChildren: () => import('./pages/login/login.module').then(m => m.LoginModule)
   },
   {
     path: 'signup',
@@ -44,6 +33,18 @@ const routes: Routes = [
     loadChildren: () => import('./pages/exhibitor-list/exhibitor-list.module').then(m => m.ExhibitorListPageModule)
   },
   {
+    path: 'broadcasting',
+    loadChildren: () => import('./pages/broadcasting/broadcasting.module').then(m => m.BroadcastingPageModule)
+  },
+  {
+    path: 'supplier',
+    loadChildren: () => import('./pages/supplierplatform/supplier.module').then(m => m.SupplierPageModule)
+  },
+  {
+    path: 'btb',
+    loadChildren: () => import('./pages/btb/btb.module').then(m => m.BtbPageModule)
+  },
+  {
     path: 'app',
     loadChildren: () => import('./pages/tabs-page/tabs-page.module').then(m => m.TabsModule)
   },
@@ -51,6 +52,18 @@ const routes: Routes = [
     path: 'tutorial',
     loadChildren: () => import('./pages/tutorial/tutorial.module').then(m => m.TutorialModule),
     canMatch: [checkTutorialGuard]
+  },
+  {
+    path: 'details/:id',
+    loadChildren: () => import('./pages/details/details.module').then(m => m.DetailsModule)
+  },,
+  {
+    path: 'session/:sessionId',
+    loadChildren: () => import('./pages/session-detail/session-detail.module').then(m => m.SessionDetailModule)
+  },
+  {
+    path: 'agenda-item/:id',
+    loadChildren: () => import('./pages/tab1/agenda-item/agenda-item.module').then(m => m.AgendaItemPageModule)
   }
 ];
 

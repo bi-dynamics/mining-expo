@@ -11,11 +11,16 @@ import { ScannerModule } from '../scanner/scanner.module';
 import { ScheduleModule } from '../schedule/schedule.module';
 import { SessionDetailModule } from '../session-detail/session-detail.module';
 import { SpeakerDetailModule } from '../speaker-detail/speaker-detail.module';
-import { SpeakerListModule } from '../speaker-list/speaker-list.module';
+import { SpeakersPageModule } from '../speaker-list/speaker-list.module';
 import { RegisterModule } from "../register/register.module";
-import { ExhibitorDetailModule } from '../exhibitor-detail/exhibitor-detail.module';
+import { DetailsModule } from '../details/details.module';
 import { ExhibitorListPageModule } from '../exhibitor-list/exhibitor-list.module';
-
+// import { BroadcastingPageModule } from "../broadcasting/broadcasting.module";
+import { SupplierPageModule } from "../supplierplatform/supplier.module";
+import { BtbPageModule } from "../btb/btb.module";
+import { ExpoScheduleModule } from '../expo-schedule/expo-schedule.module';
+import { Tab1PageModule } from '../tab1/tab1.module';
+import { AgendaItemPageModule } from '../tab1/agenda-item/agenda-item.module';
 
 @NgModule({
   imports: [
@@ -25,12 +30,17 @@ import { ExhibitorListPageModule } from '../exhibitor-list/exhibitor-list.module
     MapModule,
     ScannerModule,
     ScheduleModule,
+    ExpoScheduleModule,
     SessionDetailModule,
     SpeakerDetailModule,
-    SpeakerListModule,
+    SpeakersPageModule,
     RegisterModule,
-    ExhibitorDetailModule,
+    Tab1PageModule,
+    AgendaItemPageModule,
+    DetailsModule,
     ExhibitorListPageModule,
+    SupplierPageModule,
+    BtbPageModule,
     TabsPageRoutingModule
   ],
   declarations: [

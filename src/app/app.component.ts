@@ -11,6 +11,8 @@ import { Storage } from '@ionic/storage-angular';
 
 import { UserData } from './providers/user-data';
 
+import { AuthService } from './services/auth.service';
+
 
 @Component({
   selector: 'app-root',
@@ -21,12 +23,12 @@ import { UserData } from './providers/user-data';
 export class AppComponent implements OnInit {
   appPages = [
     {
-      title: 'Registration',
-      url: '/app/tabs/register',
-      icon: 'hammer'
+      title: 'Main Expo Programme',
+      url: '/app/tabs/schedule',
+      icon: 'calendar'
     },
     {
-      title: 'Exhibitor Information',
+      title: 'Exhibitors',
       url: '/app/tabs/exhibitor-list',
       icon: 'information-circle'
     },
@@ -34,20 +36,20 @@ export class AppComponent implements OnInit {
       title: 'Floor Plan',
       url: '/app/tabs/map',
       icon: 'map'
-    }, 
-    {
-      title: 'Event Schedule',
-      url: '/app/tabs/schedule',
-      icon: 'calendar'
-    },    
+    },
   ];
-  appPages_1 = [{
-
-    title: 'Programme',
-    url: '/app/tabs/schedule',
+  appPages_1 = [
+    {
+      title: 'Register as a Conf. Delegate',
+      url: '/app/tabs/register',
+      icon: 'hammer'
+    },
+  {
+    title: 'Mining Conference Programme',
+    url: '/app/tabs/agenda',
     icon: 'time'
   },
-  {    
+  {
     title: 'Speakers',
     url: '/app/tabs/speakers',
     icon: 'people'
@@ -56,25 +58,25 @@ export class AppComponent implements OnInit {
     title: 'Scan',
     url: '/app/tabs/scanner',
     icon: 'scan'
-  }, 
+  },
   {
     title: 'Broadcasting',
-    url: '/app/tabs/scanner',
+    url: '/app/tabs/broadcasting',
     icon: 'caret-forward'
-  }, 
+  },
  ]
   appPages_2 = [
     {
       title: "Supplier's Platform",
-      url: '/app/tabs/',
+      url: '/app/tabs/supplier',
       icon: 'briefcase'
-    },       
+    },
     {
       title: "B2B",
-      url: '/app/tabs/speakers',
+      url: '/app/tabs/btb',
       icon: 'cafe'
     },
-    
+
 
   ]
   loggedIn = false;
@@ -84,6 +86,7 @@ export class AppComponent implements OnInit {
     private menu: MenuController,
     private platform: Platform,
     private router: Router,
+    private authService: AuthService,
     private storage: Storage,
     private userData: UserData,
     private swUpdate: SwUpdate,
@@ -117,6 +120,11 @@ export class AppComponent implements OnInit {
         .then(() => window.location.reload());
     });
   }
+
+  async logout() {
+		await this.authService.logout();
+		this.router.navigateByUrl('/', { replaceUrl: true });
+	  }
 
   initializeApp() {
     this.platform.ready().then(() => {
@@ -153,11 +161,11 @@ export class AppComponent implements OnInit {
     });
   }
 
-  logout() {
-    this.userData.logout().then(() => {
-      return this.router.navigateByUrl('/app/tabs/schedule');
-    });
-  }
+  // logout() {
+    // this.userData.logout().then(() => {
+      // return this.router.navigateByUrl('/app/tabs/schedule');
+    // });
+  // }
 
   openTutorial() {
     this.menu.enable(false);

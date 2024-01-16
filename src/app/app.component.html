@@ -2,6 +2,7 @@
   <ion-split-pane contentId="main-content">
     <ion-menu contentId="main-content">
       <ion-content>
+          <ion-img src="/assets/img/meclogo.png" alt="miningexpologo" ></ion-img>
         <ion-list lines="none">
           <ion-list-header>
             Mining Expo
@@ -13,14 +14,12 @@
                 {{p.title}}
               </ion-label>
             </ion-item>
-            
-
           </ion-menu-toggle>
         </ion-list>
         <ion-list lines="none">
           <ion-list-header>
-           Conference
-          </ion-list-header>
+                Conference
+            </ion-list-header>
           <ion-menu-toggle autoHide="false" *ngFor="let p of appPages_1; let i = index">
             <ion-item [routerLink]="p.url" routerLinkActive="selected" routerDirection="root" detail="false">
               <ion-icon slot="start" [name]="p.icon + '-outline'"></ion-icon>
@@ -28,7 +27,6 @@
                 {{p.title}}
               </ion-label>
             </ion-item>
-            
 
           </ion-menu-toggle>
         </ion-list>
@@ -43,26 +41,13 @@
                 {{p.title}}
               </ion-label>
             </ion-item>
-            
-
           </ion-menu-toggle>
         </ion-list>
-        
-        
 
-        <ion-list *ngIf="loggedIn" lines="none">
+       <ion-list *ngIf="!loggedIn" lines="none">
           <ion-list-header>
-            Account
+            Support
           </ion-list-header>
-
-          <ion-menu-toggle autoHide="false">
-            <ion-item routerLink="/account" routerLinkActive="active" routerDirection="root" detail="false">
-              <ion-icon slot="start" name="person"></ion-icon>
-              <ion-label>
-                Account
-              </ion-label>
-            </ion-item>
-          </ion-menu-toggle>
 
           <ion-menu-toggle autoHide="false">
             <ion-item routerLink="/support" routerLinkActive="active" routerDirection="root" detail="false">
@@ -72,49 +57,6 @@
               </ion-label>
             </ion-item>
           </ion-menu-toggle>
-
-          <ion-menu-toggle autoHide="false">
-            <ion-item button (click)="logout()" detail="false">
-              <ion-icon slot="start" name="log-out"></ion-icon>
-              <ion-label>
-                Logout
-              </ion-label>
-            </ion-item>
-          </ion-menu-toggle>
-
-        </ion-list>
-
-        <ion-list *ngIf="!loggedIn" lines="none">
-          <ion-list-header>
-            Account
-          </ion-list-header>
-
-          <ion-menu-toggle autoHide="false">
-            <ion-item routerLink="/login" routerLinkActive="active" routerDirection="root" detail="false">
-              <ion-icon slot="start" name="log-in"></ion-icon>
-              <ion-label>
-                Login
-              </ion-label>
-            </ion-item>
-          </ion-menu-toggle>
-
-          <ion-menu-toggle autoHide="false">
-            <ion-item routerLink="/support" routerLinkActive="active" routerDirection="root" detail="false">
-              <ion-icon slot="start" name="help"></ion-icon>
-              <ion-label>
-                Support
-              </ion-label>
-            </ion-item>
-          </ion-menu-toggle>
-
-          <ion-menu-toggle autoHide="false">
-            <ion-item routerLink="/signup" routerLinkActive="active" routerDirection="root" detail="false">
-              <ion-icon slot="start" name="person-add"></ion-icon>
-              <ion-label>
-                Signup
-              </ion-label>
-            </ion-item>
-          </ion-menu-toggle>          
 
           <ion-item>
             <ion-icon slot="start" name="moon-outline"></ion-icon>
@@ -127,19 +69,19 @@
         <ion-list lines="none">
           <ion-list-header>
             Welcome Page
-          </ion-list-header>
+          </ion-list-header >
           <ion-menu-toggle autoHide="false">
             <ion-item button (click)="openTutorial()" detail="false">
               <ion-icon slot="start" name="hammer"></ion-icon>
               <ion-label>Welcome</ion-label>
             </ion-item>
+              <ion-img src="/assets/img/rmbLogo.png" alt="rmblogo">
+              </ion-img>
           </ion-menu-toggle>
         </ion-list>
       </ion-content>
     </ion-menu>
-
     <ion-router-outlet id="main-content"></ion-router-outlet>
-
   </ion-split-pane>
 
 </ion-app>

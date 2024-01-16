@@ -1,234 +1,240 @@
 {
   "schedule": [
     {
-      "date": "2023-05-17",
+      "date": "2023-08-30",
       "groups": [
         {
-          "time": "8:00 am",
+          "time": "Day 1, 30 August 2023 7:30 am",
           "sessions": [
             {
               "name": "Registration",
-              "timeStart": "8:00 am",
-              "timeEnd": "8:10 am",
-              "location": "Windhoek Show Grounds",
-              "description": "Attendees arrive and check-in. Breakfast is served, providing an opportunity for networking",
+              "timeStart": "7:30 am",
+              "timeEnd": "9:00 am",
+              "location": "Windhoek Show Grounds Office",
+              "description": "Arrival of Exhibitors",
               "tracks": ["registration"],
               "id": "1"
             }
           ]
         },
         {
-          "time": "8:10 am",
+          "time": "Day 1, 30 August 2023 9:00 am",
           "sessions": [
             {
-              "name": "Safety Moment",
-              "location": "Room 200",
+              "name": "Arrival by H.E. Dr Hage Geingob, President of the Republic of Namibia, AU & Namibia Anthems, Mr Ricardo Goagoseb - Director of ceremonies",
+              "location": "Windhoek Show Grounds",
               "description": "Safety Moment.",
-              "speakerNames": ["Ms Barcelona Tsauses"],
-              "timeStart": "8:10 am",
-              "timeEnd": "8:20 am",
+              "speakerNames": ["Mr Ricardo Goagoseb"],
+              "timeStart": "9:00 am",
+              "timeEnd": "9:10 am",
               "tracks": ["Presentation"],
               "id": "2"
             },
             {
-              "name": "Welcoming Remarks",
-              "location": "Room 202",
-              "description": "Welcome Remarks",
-              "speakerNames": ["Mr. Zebra Kasete"],
-              "timeStart": "8:20 am",
-              "timeEnd": "8:30 am",
+              "name": "Welcoming Remarks & Opening",
+              "location": "Makalani Hall",
+              "description": "Welcome Remarks & Opening",
+              "speakerNames": ["Mr. Zebra Kasete, President, Chamber of Mines of Namibia"],
+              "timeStart": "9:10 am",
+              "timeEnd": "9:20 am",
               "tracks": ["Speech"],
               "id": "3"
             },
             {
-              "name": "Remarks",
-              "location": "Room 204",
+              "name": "Remarks: Board Member, Namibian Petroleum Operators Association (NAMPOA)",
+              "location": "Makalani Hall",
               "description": "Remarks",
-              "speakerNames": ["Klaus Endresen"],
-              "timeStart": "8:30 am",
-              "timeEnd": "8:40 am",
+              "speakerNames": ["Maria Mbudhi"],
+              "timeStart": "9:20 am",
+              "timeEnd": "9:30 am",
               "tracks": ["Workshop"],
               "id": "4"
+            },
+            {
+              "name": "Remarks: Introduction of the Guest of Honour by the Minister of Mines and Energy",
+              "location": "Makalani Hall",
+              "description": "Remarks",
+              "speakerNames": ["Hon. Tom Alweendo"],
+              "timeStart": "9:30 am",
+              "timeEnd": "9:40 am",
+              "tracks": ["Workshop"],
+              "id": "5"
             }
           ]
         },
         {
-          "time": "8.40am",
+          "time": "Day 1, 30 August 2023 9:40am",
           "sessions": [
             {
-              "name": "Official Opening",
-              "location": "Room 206",
-              "description": "Official Opening",
-              "speakerNames": ["Hon, Tom Alweendo"],
-              "timeStart": "8:40 am",
-              "timeEnd": "9:00 am",
+              "name": "Key Note address by H.E. Dr Hage Geingob, President of the Republic of Namibia and official opening of the 2023 Mining Expo and Conference",
+              "location": "Makalani Hall",
+              "description": "Official opening of the Mining Expo",
+              "speakerNames": ["H.E. Dr Hage Geingob"],
+              "timeStart": "9:40 am",
+              "timeEnd": "10:10 am",
               "tracks": ["Remarks"],
-              "id": "5"
-            },
-            {
-              "name": "2022 Inter-Mine Safety Competition Awards",
-              "location": "Room 206",
-              "description": "2022 Inter-Mine Safety Competition Awards",
-              "speakerNames": ["Ms Barcelona Tsauses"],
-              "timeStart": "9:00 am",
-              "timeEnd": "10:00 am",
-              "tracks": ["Awards"],
               "id": "6"
             },
             {
-              "name": "Cutting of the Ribbon and Visiting of the booth",
-              "location": "Room 206",
-              "description": "Cutting of the Ribbon and Visiting of the booth",
-              "speakerNames": ["Minister of Mines and Energy"],
-              "timeStart": "10:15 am",
-              "timeEnd": "10:30 am",
-              "tracks": ["Presentations"],
+              "name": "Vote of thanks by Mr George Botshiwe, 1st Vice President of the Chamber of Mines of Namibia",
+              "location": "Makalani Hall",
+              "description": "Vote of thanks by Mr George Botshiwe, 1st Vice President of the Chamber of Mines of Namibia",
+              "speakerNames": [""],
+              "timeStart": "10:10 am",
+              "timeEnd": "10:20 am",
+              "tracks": ["Remarks"],
               "id": "7"
             },
             {
-              "name": "Exhibitor Opening",
-              "location": "Room 206",
-              "description": "Exhibitor Opens to the general public",
-              "speakerNames": [],
-              "timeStart": "12:30 pm",
-              "timeEnd": "14:00 pm",
+              "name": "Cutting of the Ribbon and Visiting of the booth by Official Delegation",
+              "location": "Makalani Hall",
+              "description": "Cutting of the Ribbon and Visiting of the booth by Delegation",
+              "speakerNames": [""],
+              "timeStart": "10:20 am",
+              "timeEnd": "11:20 am",
               "tracks": ["Presentations"],
               "id": "8"
-            }
-          ]
-        },
-        {
-          "time": "14:00 am",
-          "sessions": [
+            },
             {
-              "name": "Lunch Break",
-              "location": "General",
-              "description": "Lunch Break",
-              "speakerNames": [""],
-              "timeStart": "14:00 pm",
-              "timeEnd": "17:00 pm",
-              "tracks": ["Workshop"],
+              "name": "Exhibition Opens to the general public",
+              "location": "Windhoek Show Grounds",
+              "description": "Exhibitor Opens to the general public",
+              "speakerNames": [],
+              "timeStart": "11:30 am",
+              "timeEnd": "onwards",
+              "tracks": ["Presentations"],
               "id": "9"
             },
             {
-              "name": "Programme",
-              "location": "Room 206",
-              "description": "Conference Programme",
-              "speakerNames": ["Peter Shimbangu", "Gino Anderson"],
-              "timeStart": "18:00 pm",
-              "timeEnd": "18:00 pm",
-              "tracks": ["Presentation"],
+              "name": "Judging of Stands",
+              "location": "All Exhibition Halls",
+              "description": "Judging of Stands",
+              "speakerNames": [],
+              "timeStart": "11:30 am",
+              "timeEnd": "onwards",
+              "tracks": ["Presentations"],
               "id": "10"
+            }
+          ]
+        },
+        {
+          "time": "Day 1, 30 August 2023 12:30 pm",
+          "sessions": [
+            {
+              "name": "Lunch Break",
+              "location": "Jacaranda Hall",
+              "description": "Lunch Break",
+              "speakerNames": [""],
+              "timeStart": "12:30 pm",
+              "timeEnd": "14:00 pm",
+              "tracks": ["General"],
+              "id": "11"
             },
             {
-              "name": "Closing",
-              "location": "Room 206",
-              "description": "Exhibitor Closes",
-              "speakerNames": [],
-              "timeStart": "18:00 pm",
-              "timeEnd": "18:00 pm",
-              "tracks": ["Technology Advancements"],
-              "id": "11"
-            }
-          ]
-        },
-        {
-          "time": "12:00 pm",
-          "sessions": [
-            {
-              "name": "Lunch and Exhibition",
-              "location": "Dining Hall",
-              "description": "Lunch is served. Participants explore the exhibition area to learn about the latest products and services in the mining sector",
-              "timeStart": "12:00 pm",
-              "timeEnd": "1:00 pm",
-              "tracks": ["Food"],
+              "name": "Conference Registration",
+              "location": "Makalani Hall",
+              "description": "Conference Registration",
+              "speakerNames": [""],
+              "timeStart": "12:30 pm",
+              "timeEnd": "14:00 pm",
+              "tracks": ["Presentation"],
               "id": "12"
-            }
-          ]
-        },
-        {
-          "time": "7:00 am",
-          "sessions": [
-            {
-              "name": "Registration",
-              "location": "Room 206",
-              "description": "Registration",
-              "speakerNames": [],
-              "timeStart": "7:00 am",
-              "timeEnd": "8:00 am",
-              "tracks": ["Registration"],
-              "id": "13"
             },
             {
               "name": "Conference Programme",
-              "location": "Room 204",
+              "location": "Makalani Hall",
+              "description": "Conference Programme",
+              "speakerNames": [""],
+              "timeStart": "14:00 pm",
+              "timeEnd": "17:00 pm",
+              "tracks": ["Technology Advancements"],
+              "id": "13"
+            },
+            {
+              "name": "Exhibition Closes",
+              "location": "All Exhibition Halls",
+              "description": "Exhibition Closes",
+              "speakerNames": [""],
+              "timeStart": "18:00 pm",
+              "timeEnd": "",
+              "tracks": ["Advancements"],
+              "id": "14"
+            }
+          ]
+        },
+        {
+          "time": "Day 2, 31 August 2023 7:30 am",
+          "sessions": [
+            {
+              "name": "Conference Registration",
+              "location": "Makalani Hall",
+              "description": "Registration",
+              "speakerNames": [],
+              "timeStart": "7:30 am",
+              "timeEnd": "8:00 am",
+              "tracks": ["Registration"],
+              "id": "15"
+            },
+            {
+              "name": "Conference Programme",
+              "location": "Makalani Hall",
               "description": "Conference Programme",
               "speakerNames": [],
               "timeStart": "8:00 am",
               "timeEnd": "13:00 pm",
               "tracks": ["Conference"],
-              "id": "14"
+              "id": "16"
             },
             {
-              "name": "Opening",
-              "location": "Room 202",
-              "description": "Exhibitor Opens to the general public",
+              "name": "Exhibition Opens to the general public",
+              "location": "All Exhibition Halls",
+              "description": "Exhibition Opens to the general public",
               "speakerNames": [""],
               "timeStart": "8:00 am",
               "timeEnd": "18:00 pm",
               "tracks": ["Presentations"],
-              "id": "15"
+              "id": "17"
             }
           ]
         },
         {
-          "time": "10:30 am",
+          "time": "Day 2, 31 August 2023 10:30 am",
           "sessions": [
             {
-              "name": "Judging of Stands",
-              "location": "Room 206",
-              "description": "Judging of Stands",
-              "speakerNames": [""],
-              "timeStart": "10:30 am",
-              "timeEnd": "14:0 pm",
-              "tracks": ["Conference"],
-              "id": "16"
-            },
-            {
               "name": "Lunch Break",
-              "location": "General",
+              "location": "Jacaranda Hall",
               "description": "Lunch is served. Participants explore the exhibition area to learn about the latest products and services in the mining sector",
               "speakerNames": [""],
               "timeStart": "12:30 pm",
               "timeEnd": "14:00 pm",
               "tracks": ["General"],
-              "id": "17"
+              "id": "18"
             },
             {
-              "name": "Closing",
-              "location": "Room 206",
+              "name": "Exhibition Closes",
+              "location": "All Exhibition Halls",
               "description": "Closing Ceremony. Exhibition closes ",
               "speakerNames": [],
               "timeStart": "18:00 pm",
-              "timeEnd": "18:00 pm",
+              "timeEnd": "",
               "tracks": ["Conference"],
-              "id": "18"
+              "id": "19"
             }
           ]
         },
         {
-          "time": "18:00",
+          "time": "Day 2, 31 August 2023 18:00",
           "sessions": [
             {
-              "name": "Networking Cocktail Function",
-              "location": "Room 206",
+              "name": "Networking Cocktail Function, Presentation of awards for Best Stand/Booth (BY INVITATION ONLY)",
+              "location": "Wag n Bietjie Hall",
               "description": "Presentation of Awards for the best stand/booth (BY INVITATION ONLY)",
               "speakerNames": [],
               "timeStart": "18:30 pm",
-              "timeEnd": "20:30 pm",
+              "timeEnd": "onwards",
               "tracks": ["Conference"],
-              "id": "19"
-            }            
+              "id": "20"
+            }
           ]
         }
       ]
@@ -237,160 +243,196 @@
 
   "speakers": [
     {
-      "name": "Peter Shimbangu",
-      "profilePic": "/assets/img/speakers/b1.png",
+      "name": "Hon. Tom Alweendo",
+      "profilePic": "/assets/img/speakers/Hon. Tom Alweendo High resolution Official Image.webp",
       "instagram": "instagram",
       "twitter": "twitter",
-      "about": "Peter Shimbangu is a world renown environmentalist",
-      "title": "Engineer",
+      "about": "Hon. Tom Alweendo, is the Minister of Mines and Energy in the Cabinet of the Republic of Namibia. Born on 17 March 1958, in Okahenge, Oshana Region, Hon. Thomas Kavaningilamo Alweendo was appointed as Minister of Mines and Energy in February 2018 by President Hage G. Geingob. Prior to his appointment, Alweendo was the Director General of the National Planning Commission appointed by former President, H.E Hifikepunye Pohamba as Director General of the National Planning Commission (NPC). The National Planning Commission is a Constitutional body that is tasked with the responsibility to plan the priorities and direction of national development. In March 2015 he was appointed by President Hage G. Geingob as Minister of Economic Planning and also as Director General of the NPC.",
+      "title": "Minister of Mines & Energy",
       "location": "Everywhere",
       "email": "burt@example.com",
       "phone": "+1-541-754-3010",
       "id": "1"
     },
     {
-      "name": "Paul Patrick",
-      "profilePic": "/assets/img/speakers/b2.png",
+      "name": "Willy Mertens",
+      "profilePic": "/assets/img/speakers/Image_Willy Mertens_Debmarine Namibia CEO_2023.webp",
       "instagram": "instagram",
       "twitter": "twitter",
-      "about": "Paul is a data specialist.",
-      "title": "Data Specialist",
+      "about": "CEO - Debmarine Namibia",
+      "title": "CEO - Debmarine Namibia",
       "location": "Everywhere",
       "email": "paul@example.com",
       "phone": "+1-541-754-3010",
       "id": "2"
     },
     {
-      "name": "Silas Ndapandula",
-      "profilePic": "/assets/img/speakers/b3.png",
+      "name": "Aphary Muyongo",
+      "profilePic": "/assets/img/speakers/Aphary Muyongo.webp",
       "instagram": "instagram",
       "twitter": "twitter",
-      "about": "Silas is a speaker.",
-      "title": "Speaker",
+      "about": "Aphary Muyongo is a Deputy Director and head of the Economic Geology Division at the Geological Survey of Namibia within the Ministry of Mines and Energy. He holds an M.Sc. degree in Applied Geoscience specialising in Exploration and Economic Geology (University of Namibia); a double major B.Sc. degree in Geology and Chemistry (University of Namibia); and a B.Sc.Honours degree (ore deposit stream) from the University of KwaZulu-Natal, RSA. He has over 19 years of work experience including geological mapping and mineral exploration accumulated mainly at the Geological Survey of Namibia and private mineral exploration industry.",
+      "title": "Deputy Director of Economic Geology - Geological Survey of Namibia",
       "location": "Everywhere",
       "email": "silas@example.com",
       "phone": "+1-541-754-3010",
       "id": "3"
     },
     {
-      "name": "Eva Laura",
-      "profilePic": "/assets/img/speakers/b4.png",
+      "name": "Anthony Viljoen",
+      "profilePic": "/assets/img/speakers/Anthony Viljoen_Headshot.webp",
       "instagram": "instagram",
       "twitter": "twitter",
-      "about": "Eva is a speaker",
-      "title": "Developer Advocate",
+      "about": "Anthony Viljoen is a seasoned African mining entrepreneur and mining executive. He is a founding shareholder of VM Investment Company (Pty) Ltd, a principal investments and advisory company with a bias towards mining exploration and development. He has been responsible for the establishment and project development of numerous mining projects including, Vanadium, Lithium, Tin, Tantalum, Coal and Gold across Africa. Anthony was a founder and CEO of Lemur Resources (ASX:LMR), an Australian listed company focused on the development of the coal basins for electricity generation in Madagascar, from inception in 2008 until the company was acquired by Bushveld Minerals in 2014.He was a founding shareholder and executive director of London Listed Bushveld Minerals (AIM:BMN), from 2011 until he exited earlier last year (2022), building Bushveld from an exploration company into a producer of 5% of the world’s supply of Vanadium. His current role is as the founder and CEO of London Listed Andrada Mining (AIM:ATM), which is focused on identifying and developing technology metals mines for the energy transition. Under his leadership, the company identified and developed its flagship asset in Namibia, the Uis mine, which contains globally significant quantities of Lithium, Tin and Tantalum.Anthony holds a Bachelor of Business and Agricultural Economics degree, and a Postgraduate qualification in Finance and Banking. He grew up in the mining industry in Africa and has drawn from the wealth of knowledge and experienced network of mining professionals, acquired by his father and late uncle, Richard and Morris Viljoen, who were both pre-eminent Professors of Geology and are renowned for their contributions to the African mining industry and geology in particular. Between them, they cultivated more than a century of exploration and mine development experience",
+      "title": "CEO - Andrada Mining",
       "location": "Everywhere",
       "email": "eva@example.com",
       "phone": "+1-541-754-3010",
       "id": "4"
     },
     {
-      "name": "Ellie Ross",
-      "profilePic": "/assets/img/speakers/b5.png",
+      "name": "Christopher Drysdale",
+      "profilePic": "/assets/img/speakers/Christopher Drysdale .webp",
       "instagram": "instagram",
       "twitter": "twitter",
-      "about": "Ellie is a speaker",
-      "title": "Guest Speaker",
+      "about": "Mr. Drysdale is an experienced professional with international expertise in the mineral and exploration industry. He currently holds the position of CEO at Antler Gold Inc. (TSX.V:ANTL) and serves as a Director at E-Tech Resources Inc. (TSX.V:REE). With a diverse background and extensive work experience in Namibia and Africa, he actively promotes environmentally conscious practices in the extraction and production of critical minerals necessary for the global energy transition",
+      "title": "CEO Antler Gold & Director at E-tech Resources",
       "location": "Everywhere",
       "email": "ellie@example.com",
       "phone": "+1-541-754-3010",
       "id": "5"
     },
     {
-      "name": "Ginoelle Gauseb",
-      "profilePic": "/assets/img/speakers/b6.png",
+      "name": "Gerda Brand",
+      "profilePic": "/assets/img/speakers/Gerda Brand 1.webp",
       "instagram": "instagram",
       "twitter": "twitter",
-      "about": "Ginoelle is a speaker",
-      "title": "Guest Speaker",
+      "about": "Gerda is a Tax Director and leads the Tax Business Unit of Deloitte in Namibia. She was appointed a Director in 2010 and has over 25 years of tax experience. Gerda is an admitted attorney of the High Court of Namibia. Gerda specialises in all forms of taxation (corporate tax, VAT, PAYE, expat taxes, withholding taxes, transfer pricing) and consults to a portfolio of corporates, listed and medium sized clients, on a wide range of tax issues.Gerda is a member of the Law Society of Namibia, the Bankers Association’s VAT committee and the Institute of Chartered Accountants (ICAN) Tax Committee. She is the editor of Deloitte Tax Newsletter and Quick Tax Guide",
+      "title": "Tax Director - Deloitte Namibia",
       "location": "Everywhere",
-      "email": "gino@example.com",
+      "email": "isabella@example.com",
       "phone": "+1-541-754-3010",
       "id": "6"
     },
     {
-      "name": "Isabella Shikongo",
-      "profilePic": "/assets/img/speakers/b7.png",
+      "name": "Gosia Lachut",
+      "profilePic": "/assets/img/speakers/Gosia Lachut EU.webp",
       "instagram": "instagram",
       "twitter": "twitter",
-      "about": "Isabella is a speaker.",
-      "title": "Graphic Design",
+      "about": "Mrs Gosia Lachut has been posted to the EU Delegation to Namibia as the Deputy Head of Mission/ Head of Political, Press and Information Section, since September 2020. Gosia has been working for the EU since 2003, covering various aspects of the EU external relations, both from the development assistance and political perspective.Her geographic experience ranges from Southern and Eastern Africa, through the Southern Pacific and the Maghreb countries. Originally graduated in economics/finance (Warsaw School of Economics and Université de Tours), she went on to complete Master's degrees in European Studies (College of Europe in Brugge), and International Politics and Security Studies (Université Libre de Bruxelles).",
+      "title": "Acting Chargé d'Affaires - European Union",
       "location": "Everywhere",
-      "email": "isabella@example.com",
+      "email": "karl@example.com",
       "phone": "+1-541-754-3010",
       "id": "7"
     },
     {
-      "name": "Karl Lenz",
-      "profilePic": "/assets/img/speakers/b10.png",
+      "name": "John Borshoff",
+      "profilePic": "/assets/img/speakers/John Borshoff (2).webp",
       "instagram": "instagram",
       "twitter": "twitter",
-      "about": "Karl is a speaker.",
-      "title": "Developer Advocate",
+      "about": "John is an experienced mining executive and geologist with more than 45 years’ uranium industry experience. He founded Paladin Energy Limited in 1993 and took it from a junior explorer to a multi-mine uranium company worth more than US$5 billion at its peak in the pre-Fukushima era.He was appointed to the role of Managing Director/CEO of Deep Yellow in 2016, aiming to develop the Company into a Tier 1, multi-mine, global uranium producer. He has since built a capable, experienced team with a proven track record and initiated a dual pillar growth strategy of discovery of new deposits and mergers and acquisitions",
+      "title": "Managing Director/CEO - Deep Yellow Limited",
       "location": "Everywhere",
-      "email": "karl@example.com",
+      "email": "lionel@example.com",
       "phone": "+1-541-754-3010",
       "id": "8"
     },
     {
-      "name": "Lionel Lucas",
-      "profilePic": "/assets/img/speakers/b8.png",
-      "instagram": "instagram",
-      "twitter": "twitter",
-      "about": "Lionel is a speaker",
-      "title": "Developer Advocate",
+      "name": "John Roos",
+      "profilePic": "/assets/img/speakers/John Roos.webp",
+      "instagram": "ionicframework",
+      "twitter": "ionicframework",
+      "about": "2nd Vice-President - CoM",
+      "title": "2nd Vice-President - CoM",
       "location": "Everywhere",
-      "email": "lionel@example.com",
+      "email": "molly@example.com",
       "phone": "+1-541-754-3010",
       "id": "9"
     },
     {
-      "name": "Molly Richards",
-      "profilePic": "/assets/img/speakers/b5.png",
+      "name": "Julian Grieve",
+      "profilePic": "/assets/img/speakers/Julian Grieve.webp",
       "instagram": "ionicframework",
       "twitter": "ionicframework",
-      "about": "Molly is a speaker.",
-      "title": "Graphic Design",
+      "about": "Julian has been in investment banking for the past 14 years, having started his career in mining finance and having gained exposure to oil & gas over the years. His academic background is in pure mathematics, chemistry and economics, and he is a CFA charter holder.Julian has worked across commodities and jurisdictions, from project finance for mineral sands in Kenya to acquisition finance for platinum group metals in Canada. He has led debt advisory and empowerment transactions, having raised capital for African investments from North America, Europe, Asia, Africa and Australia.He currently co-heads the Resources Sector Solutions team in RMB’s drive to prioritise client needs and ensure that the right advice, and considered holistic solutions, are consistently delivered.",
+      "title": "Co-head Resources Sector Solutions - RMB",
       "location": "Everywhere",
-      "email": "molly@example.com",
+      "email": "paul@example.com",
       "phone": "+1-541-754-3010",
       "id": "10"
     },
     {
-      "name": "Pauline Paulus",
-      "profilePic": "/assets/img/speakers/b6.png",
+      "name": "Kirsty Liddicoat",
+      "profilePic": "/assets/img/speakers/Kirsty-30.webp",
       "instagram": "ionicframework",
       "twitter": "ionicframework",
-      "about": "Pauline is a speaker.",
-      "title": "Software Engineer",
+      "about": "Kirsty is the Chief Operating Officer for Northern Graphite. Over 20 years’ in the mining industry has seen her career cover strategy, mine and project management, mine planning, engineering, geoscience and exploration in oil sands, coal, gold, iron ore, bauxite and copper-gold. Kirsty’s been instrumental in changing the way geoscience is undertaken in coal through the application of new technologies and methodologies.Having worked in remote and regional areas Kirsty is well accustomed to working with people from a wide variety of backgrounds in demanding conditions. Her dedication to the progression of inclusion and diversity in the industry has developed into a passion for supporting women through their careers.Kirsty has a Bachelor of Science in Geology (Honors), a Masters in Mining Engineering and a Masters in Business Administration. In 2018 Kirsty received a Chief Executive Women scholarship to attend INSEAD, in 2012 she received the Women in Leadership Australia Scholarship designed to develop high potential female leaders and in 2013 Kirsty was recognized in the inaugural 100 Global most Inspirational Women in Mining published by Women in Mining United Kingdom.With a track record in team leadership, mine development, mine planning and systems establishment, Kirsty has been instrumental in changing the culture of two major sites in order to improve safety and increase productivity.Kirsty has a love of the outdoors and all associated activities, has hiked to Everest Base Camp and is known to do anything to get a thrill - not limited to rock climbing and jumping out of planes. She travels extensively and enjoys time with family and friends.",
+      "title": "COO - Northen Graphite",
       "location": "Everywhere",
-      "email": "paul@example.com",
+      "email": "rachel@example.com",
       "phone": "+1-541-754-3010",
       "id": "11"
     },
     {
-      "name": "Rachel Bourne",
-      "profilePic": "/assets/img/speakers/b5.png",
+      "name": "Olavi Hangula",
+      "profilePic": "/assets/img/speakers/Olavi Hangula.webp",
       "instagram": "ionicframework",
       "twitter": "ionicframework",
-      "about": "Rachel is a speaker.",
-      "title": "Senior Software Engineer",
+      "about": "Olavi Hangula, Mining and Energy Relations Manager at RMB Namibia, specializes in building and nurturing relationships within the mining and energy sector. Leveraging his investment banking background, Olavi assists clients in identifying opportunities and handling complex financial transactions. With a multidisciplinary perspective, he approaches challenges creatively to develop impactful solutions.Previously, Olavi worked as an Investment Banking Analyst at Jefferies in London, where he played a vital role in supporting debt capital raise transactions for renewable energy projects, including solar, battery energy storage, and wind farm initiatives within the Power, Utilities, and Infrastructure sectors. His skill in recognizing opportunities and analyzing market trends contributed to the successful execution of these significant financial transactions.In addition to his finance experience, Olavi gained practical insight into Namibian Private Equity, deepening his understanding of challenges in emerging markets. Holding a degree in International Relations with a Minor in Business from the University of Rochester, New York, Olavi is dedicated to driving positive change and collaborative achievements.",
+      "title": "Relationship Manager (Mining & Energy) - RMB Namibia",
       "location": "Everywhere",
-      "email": "rachel@example.com",
+      "email": "ted@example.com",
       "phone": "+1-541-754-3010",
       "id": "12"
     },
     {
-      "name": "Timothy Francis",
-      "profilePic": "/assets/img/speakers/b10.png",
+      "name": "Barcelona Tsauses",
+      "profilePic": "/assets/img/speakers/Barcelona Tsauses.webp",
       "instagram": "ionicframework",
       "twitter": "ionicframework",
-      "about": "Ted is a speaker",
-      "title": "Software Engineer",
+      "about": "As the appointed Director of Business Transformation, Barcelona brings a wealth of experience to her role, having designed and commissioned various plant units across her career, including the state-of-the-art Sulphuric Acid Plant at the Dundee Tsumeb Smelter. Barcelona is a Chemical Engineer and holds an Executive Management MBA from the University of Cape Town, and serves at an industry level through her Chairmanship of the Chamber Safety Committee and COVID-19 Task Team, and is a founding member of the Women in Mining Association.",
+      "title": "Director - Sustainability and Business Transformation and Chairman - Chamber Safety Committee",
       "location": "Everywhere",
       "email": "ted@example.com",
       "phone": "+1-541-754-3010",
       "id": "13"
+    },
+    {
+      "name": "Erasmus Shivolo",
+      "profilePic": "/assets/img/speakers/Erasmus Shivolo.webp",
+      "instagram": "ionicframework",
+      "twitter": "ionicframework",
+      "about": "Mr. Shivolo is a Materials Science Engineer. He studied at the Colorado School of Mines and New Mexico Institute of Mining & Technology, USA. An employee at the Ministry of Mines and Energy since 1996, Mr. Shivolo has served in the following positions: Inspector of Mine Machinery, Chief Engineer, Deputy Director of Mines, Director of Mines, Mining Commissioner and currently holds the position of Deputy Executive Director - Department of Mines. Mr. Shivolo has also served on different boards and Committees, and has been involved in the development of several government policies and strategies as well as negotiations, representing and advancing the interest of the Government of the Republic of Namibia.",
+      "title": "Deputy Executive Director of Mines - Ministry of Mines and Energy",
+      "location": "Everywhere",
+      "email": "ted@example.com",
+      "phone": "+1-541-754-3010",
+      "id": "14"
+    },
+    {
+      "name": "Sheron Kaviua",
+      "profilePic": "/assets/img/speakers/S Kaviua_Pic.webp",
+      "instagram": "ionicframework",
+      "twitter": "ionicframework",
+      "about": "Sheron Kaviua is the Vice President Operations at Rosh Pinah Zinc Mine and the first female Mineral Resources Manager in Namibia. Sheron is an experienced, qualified leader with a track record of successfully leading diverse teams in the mining sector. She has 18 years’ experience in the mining sector and was part of the teams that converted major exploration projects into operational mines in Namibia. Sheron holds a Master of Business Administration (Project Management) from the London School of Business and Finance, and a Master of Science in Engineering (Mining) from the University of the Witwatersrand. She managed the successful implementation of technology projects, which focused on reducing costs and transforming the Rosh Pinah Mine into the future of mining and the world’s most sustainable mining company. Recently, she has led the Rosh Pinah operations through the sales process and achieved record annual production despite the challenges. Her goals are to continue leading junior to medium size mining companies safely, whilst delivering record production figures and ensuring that the communities around these companies are self-sustaining.",
+      "title": "Vice President Operations - Rosh Pinah Zinc Mine",
+      "location": "Everywhere",
+      "email": "ted@example.com",
+      "phone": "+1-541-754-3010",
+      "id": "15"
+    },
+    {
+      "name": "Salo Aleksi",
+      "profilePic": "/assets/img/speakers/salo aleksi 2021.webp",
+      "instagram": "ionicframework",
+      "twitter": "ionicframework",
+      "about": "Aleksi is a team manager for Mineral potential research team at Mineral economy solutions unit at the Geological Survey of Finland. Aleksi has worked in near mine exploration and resource drilling programs at the industry before his career at GTK, in both underground and open pit operations. At GTK Aleksi has worked as geologist, team manager and Head of unit. Current Team manager tasks include customer relations and project generation responsibilities. Aleksi’s GTK project background include critical mineral evaluation for the EC and project management for the Koillismaa deephole. Main research topics Aleksi is interested in are the different aspects of utilization of mineral resources from research to national strategy and policies.",
+      "title": "Team Manager, Mineral Potential Research - Geological Survey of Finland",
+      "location": "Everywhere",
+      "email": "ted@example.com",
+      "phone": "+1-541-754-3010",
+      "id": "16"
     }
   ],
   "exhibitors": [
@@ -428,30 +470,6 @@
 
   "tracks": [
     {
-      "name": "Angular",
-      "icon": "logo-angular"
-    },
-    {
-      "name": "Documentation",
-      "icon": "document"
-    },
-    {
-      "name": "Food",
-      "icon": "restaurant"
-    },
-    {
-      "name": "Ionic",
-      "icon": "logo-ionic"
-    },
-    {
-      "name": "Tooling",
-      "icon": "hammer"
-    },
-    {
-      "name": "Design",
-      "icon": "color-palette"
-    },
-    {
       "name": "Services",
       "icon": "cog"
     },
@@ -460,11 +478,11 @@
       "icon": "construct"
     },
     {
-      "name": "Communication",
+      "name": "Conference",
       "icon": "call"
     },
     {
-      "name": "Navigation",
+      "name": "Registration",
       "icon": "compass"
     }
   ]
