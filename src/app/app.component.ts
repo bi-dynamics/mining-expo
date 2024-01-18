@@ -13,6 +13,10 @@ import { UserData } from './providers/user-data';
 
 import { AuthService } from './services/auth.service';
 
+import { register } from 'swiper/element/bundle';
+//call Swiper's register function to globally register Swiper's custom elements.
+register();
+
 
 @Component({
   selector: 'app-root',
