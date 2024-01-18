@@ -4,6 +4,7 @@ import { IonicModule } from '@ionic/angular';
 
 import { MapPage } from './map';
 import { MapPageRoutingModule } from './map-routing.module';
+import { CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
 
 @NgModule({
   imports: [
@@ -13,6 +14,7 @@ import { MapPageRoutingModule } from './map-routing.module';
   ],
   declarations: [
     MapPage,
-  ]
+  ],
+  schemas: [CUSTOM_ELEMENTS_SCHEMA], //Import and use schema for Angular to know it is a custom element
 })
 export class MapModule { }
