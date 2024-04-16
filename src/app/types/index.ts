@@ -1,3 +1,5 @@
+import { Timestamp } from "@angular/fire/firestore";
+
 export enum SponsorTier {
   Platinum = 'platinum',
   Gold = 'gold',
@@ -23,6 +25,24 @@ export interface AgendaItem {
   speakerIds: number[];
   startTime: string;
   endTime: string;
+}
+
+export interface ConferenceScheduleItem {
+  id: number;
+  description?: string;
+  location: string;
+  name: string;
+  speakerNames: string;
+  timeEnd: Timestamp;
+  timeStart: Timestamp;
+  tracks?: string;
+}
+
+export interface SpeakerList {
+  id: number;
+  speakerName: string;
+  title?: string;
+  profilePicture?: string;
 }
 
 export interface Speaker {

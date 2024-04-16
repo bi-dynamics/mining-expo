@@ -16,9 +16,9 @@
 
   <div class="ion-padding grid">
     <app-speaker-card
-      *ngFor="let item of speakers; trackBy: trackItems"
-      [id]="item.id"
+      *ngFor="let speaker of speakerList; trackBy: trackItems"
       [button]="true"
+      [speaker]="speaker"
     ></app-speaker-card>
   </div>
   <div class="ion-padding">

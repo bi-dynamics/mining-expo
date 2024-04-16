@@ -10,6 +10,86 @@ ion-card {
   box-shadow: none;
 }
 
+.flex {
+  display: flex;
+  flex-direction: row;
+  padding: 8px 0;
+  gap: 12px;
+}
+
+ion-accordion {
+  margin-bottom: 24px;
+}
+ion-item ion-label:nth-child(1) {
+  color: #020817;
+  font-weight: 600;
+}
+
+ion-item ion-label:nth-child(2) {
+  font-weight: 800;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+
+  div:nth-child(1) {
+    color: #020817;
+    text-wrap: wrap;
+  }
+  div:nth-child(2) {
+    color: #f4a634;
+  }
+}
+
+ion-item:hover {
+  --color: #f4a634;
+  text-decoration: underline;
+  font-weight: 600;
+
+}
+
+ion-accordion ion-item[slot='header'] {
+  border-radius: 8px;
+  border: 1px solid rgb(231, 231, 231);
+  padding: 1rem 2rem;
+  background-color: #f4f5f8;
+  --background: #f4f5f8;
+  transition-property: all;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+  transition-duration: 150ms;
+}
+
+ion-accordion ion-item[slot='header']:hover {
+  background-color: white;
+  --background: #ffffff;
+  --color: white;
+  transition-property: all;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+  transition-duration: 150ms;
+}
+
+ion-accordion::part(header):hover {
+  --background: #ffffff;
+  transition-property: all;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+  transition-duration: 150ms;
+}
+
+ion-accordion ion-item[slot='header'] ion-label div.date-time {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  font-weight: 200;
+  padding: 0 16px;
+}
+
+ion-accordion div[slot='content'] {
+  border-radius: 8px;
+  background-color: white;
+  border: 1px solid rgb(231, 231, 231);
+  padding: 2rem;
+}
+
+
 ion-card-header {
   padding-bottom: 2px;
 }

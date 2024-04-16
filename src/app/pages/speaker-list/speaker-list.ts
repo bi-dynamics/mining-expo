@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
-import { SpeakerService } from '../../services/speaker.service';
-import { Speaker } from '../../types';
+// import { SpeakerService } from '../../services/speaker.service';
+import { Speaker, SpeakerList } from '../../types';
+import { DataService } from '../../services/data.service';
 
 @Component({
   selector: 'app-speakers',
@@ -8,12 +9,18 @@ import { Speaker } from '../../types';
   styleUrls: ['./speaker-list.scss'],
 })
 export class SpeakerListPage {
+  public speakerList: SpeakerList[] = [];
   public speakers: Speaker[] = [];
 
-  constructor(
-    speakerService: SpeakerService
+  constructor(private dataService: DataService,
+    // speakerService: SpeakerService
   ) {
-    this.speakers = speakerService.getSpeakers();
+    // this.speakers = speakerService.getSpeakers();
+    this.dataService.getSpeakers().subscribe(data => {
+      this.speakerList = data as SpeakerList[];
+    })
+    console.log(this.speakerList)
+    
   }
 
   trackItems(index: number, itemObject: Speaker) {
