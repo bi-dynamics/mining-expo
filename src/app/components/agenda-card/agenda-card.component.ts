@@ -3,7 +3,7 @@ import { Router } from '@angular/router';
 import { AgendaService } from '../../services/agenda.service';
 import { SpeakerService } from '../../services/speaker.service';
 import { CompanyService } from '../../services/company.service';
-import { AgendaItem, ConferenceScheduleItem, Speaker } from '../../types';
+import { AgendaItem, ScheduleItem, Speaker, SpeakersAttending } from '../../types';
 
 @Component({
   selector: 'app-agenda-card',
@@ -12,11 +12,11 @@ import { AgendaItem, ConferenceScheduleItem, Speaker } from '../../types';
 })
 export class AgendaCardComponent implements OnInit {
   @Input() id: number;
-  @Input() schedule: ConferenceScheduleItem
-
+  @Input() schedule: ScheduleItem;
   public agenda: AgendaItem;
-  public speakers: Speaker[];
+  // public speakers: Speaker[];
   public photoUrls: string[] = [];
+ 
 
   constructor(
     private agendaService: AgendaService,
@@ -29,6 +29,26 @@ export class AgendaCardComponent implements OnInit {
     // this.agenda = this.agendaService.getAgendaItem(this.id);
     // this.speakers = this.speakerService.getSpeakers(this.agenda.speakerIds);
     // this.photoUrls = this.speakers.map(speaker => speaker.photoUrl);
+    console.log(this.schedule.speakers.speakerName)
+  }
+
+  //To enable or disable opening the accordion
+  //Should be disabled if there is no description or speakers to showcase
+  shouldToggleReadOnly(): boolean {
+    if(!this.schedule.description){
+      return true;
+    } else { return false;}
+  }
+
+   //To enable or disable displaying of toggle icon
+  //Should be hidden if there is no description to showcase
+  shouldToggleIcon(): string {
+    if(this.schedule.description) {
+      return "chevron-down-outline"; 
+    } 
+    else {
+      return "none";
+    } 
   }
 
   formatDate(timestamp: any) {
@@ -54,4 +74,5 @@ export class AgendaCardComponent implements OnInit {
   formatTalkTime(agendaItem: AgendaItem) {
     return this.agendaService.formatTalkTime(agendaItem);
   }
+
 }
