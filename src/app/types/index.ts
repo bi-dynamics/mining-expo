@@ -27,15 +27,21 @@ export interface AgendaItem {
   endTime: string;
 }
 
-export interface ConferenceScheduleItem {
-  id: number;
+export interface ScheduleItem {
+  id?: string;
   description?: string;
-  location: string;
-  name: string;
-  speakerNames: string;
-  timeEnd: Timestamp;
-  timeStart: Timestamp;
+  location?: string;
+  name?: string;
+  timeEnd?: Timestamp;
+  timeStart?: Timestamp;
   tracks?: string;
+  speakers?: SpeakersAttending;
+}
+
+export interface SpeakersAttending {
+  speakerName: string;
+  speakerTitle: string;
+  speakerProfilePicture?: string;
 }
 
 export interface SpeakerList {
