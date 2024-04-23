@@ -15,6 +15,10 @@ export class DataService {
 
   constructor(private firestore: Firestore) {}
 
+    getConferenceSchedule() {
+      const confScheduleRef = collection(this.firestore, 'conference_schedule');
+      return collectionData(confScheduleRef);
+    }
     getExpoSchedule() {
       const expoScheduleRef = collection(this.firestore, 'expo_schedule');
       return collectionData(expoScheduleRef);
