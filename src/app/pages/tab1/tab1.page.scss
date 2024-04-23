@@ -6,3 +6,18 @@ app-agenda-card {
    margin-bottom: 80px;
 }
 
+.button{
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+  
+  
+    div:nth-child(2) {
+      font-weight: bolder;
+    }
+  }
+  
+  ion-item-divider {
+    box-shadow: 0px 5px 8px -2px rgba(0,0,0,0.1);
+    border: none;
+  }

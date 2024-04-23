@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { AgendaItem, ConferenceScheduleItem } from '../../types';
+import { AgendaItem, ScheduleItem } from '../../types';
 import { AgendaService } from '../../services/agenda.service';
 import { ModalController } from '@ionic/angular';
 import { PermissionsModalComponent } from '../../components/permissions-modal/permissions-modal.component';
@@ -7,6 +7,7 @@ import { Capacitor } from '@capacitor/core';
 import { PushNotificationService } from '../../services/push-notification.service';
 import { StorageService } from '../../services/storage.service';
 import { DataService } from '../../services/data.service';
+import { Timestamp } from '@angular/fire/firestore';
 
 
 @Component({
@@ -16,8 +17,8 @@ import { DataService } from '../../services/data.service';
 })
 export class Tab1Page implements OnInit {
   public agenda: AgendaItem[] = [];
-  public conferenceSchedule: ConferenceScheduleItem[] = [];
-  public daySchedule: ConferenceScheduleItem[] = [];
+  public conferenceSchedule: ScheduleItem[] = [];
+  public daySchedule: ScheduleItem[] = [];
   public selectedDay: number = 0; // Initial selected day
 
   
@@ -27,15 +28,15 @@ export class Tab1Page implements OnInit {
     private storageService: StorageService, private dataService: DataService ) {
       this.agenda = this.agendaService.getAgenda();
       this.dataService.getExpoSchedule().subscribe( data => { 
-        this.conferenceSchedule = data as ConferenceScheduleItem[]
-        this.sortScheduleById();
+        this.conferenceSchedule = data as ScheduleItem[]
+        this.sortScheduleByStartTime();
     });
     
   }
   
   ngOnInit() {
     console.log('My app has initialized');
-    this.presentModal();
+    // this.presentModal();
   }
 
   setSelectedDay(day: number) {
@@ -46,34 +47,26 @@ export class Tab1Page implements OnInit {
 
   setDaySchedule(day: number) {
     this.daySchedule = this.conferenceSchedule.filter((schedule) => {
-      const scheduleDate = new Date(schedule.timeStart.seconds * 1000);
-      console.log("schedule day filtered for day " + scheduleDate.getDate());
-      return scheduleDate.getDate() === day;
+      const scheduleDate = new Date(schedule.timeStart?.seconds * 1000);
+      if (scheduleDate.getDate() === day){
+        console.log("schedule day filtered for day " + scheduleDate.getDate());
+        return true;
+      } else { return false}
     });
     // console.log(this.daySchedule)
   }
 
-  sortScheduleById() {
-    // Assuming conferenceSchedule is already populated with data
-    this.conferenceSchedule.sort((a, b) => a.id - b.id);
+  sortScheduleByStartTime() {
+    this.conferenceSchedule.sort((a: any, b: any) => a.timeStart - b.timeStart);
   }
+
+
   
   trackItems(index: number, itemObject: AgendaItem) {
     return itemObject.id;
   }
   
-  
-  day1ScheduleSet(day: number) {
-    this.conferenceSchedule.filter((schedule) => {
-
-      const scheduleDate = new Date(schedule.timeStart.seconds * 1000);
-
-      return scheduleDate.getDate() === day; // Consider including selectedMonth for multi-month handling)
-    }
-    );
-  }
-
-  
+   
   
 
   async presentModal() {
