@@ -9,9 +9,39 @@
   </ion-toolbar>
 </ion-header>
 
-<ion-content fullscreen="true">
+<ion-content class="page-content" fullscreen="true">
 
-  <ion-list #scheduleList [hidden]="shownSessions === 0">
+  <ion-item-divider sticky color="light">
+  <ion-toolbar class="button-bar">
+      <ion-segment value="days">
+        <ion-segment-button value="day1" (click)="setSelectedDay(30)" >
+          <ion-label class="button" ><div>Day 1</div><div>August 07</div></ion-label>
+        </ion-segment-button>
+        <ion-segment-button value="day2" (click)="setSelectedDay(31)">
+          <ion-label class="button" ><div>Day 2</div><div>August 08</div></ion-label>
+        </ion-segment-button>
+      </ion-segment>
+    </ion-toolbar>
+  </ion-item-divider>
+
+  
+  <div class="ion-padding" *ngIf="selectedDay === 0">
+    <app-agenda-card
+      *ngFor="let schedule of expoSchedule"
+      [schedule]="schedule"
+    ></app-agenda-card>
+  </div>
+
+  <div class="ion-padding" *ngIf="selectedDay !== 0">
+    <app-agenda-card
+    *ngFor="let schedule of daySchedule"
+    [schedule]="schedule"
+    ></app-agenda-card>
+  </div>
+
+  <div class="ion-padding"></div>
+
+  <!-- <ion-list #scheduleList [hidden]="shownSessions === 0">
     <ion-item-group *ngFor="let group of groups" [hidden]="group.hide">
       <ion-item-divider sticky>
         <ion-label>
@@ -64,5 +94,5 @@
         <ion-icon name="logo-facebook"></ion-icon>
       </ion-fab-button>
     </ion-fab-list>
-  </ion-fab>
+  </ion-fab> -->
 </ion-content>

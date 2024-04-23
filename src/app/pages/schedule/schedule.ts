@@ -5,6 +5,8 @@ import { AlertController, IonList, IonRouterOutlet, LoadingController, ModalCont
 import { ScheduleFilterPage } from '../schedule-filter/schedule-filter';
 import { ConferenceData } from '../../providers/conference-data';
 import { UserData } from '../../providers/user-data';
+import { ScheduleItem } from '../../types';
+import { DataService } from '../../services/data.service';
 
 @Component({
   selector: 'page-schedule',
@@ -14,6 +16,10 @@ import { UserData } from '../../providers/user-data';
 export class SchedulePage implements OnInit {
   // Gets a reference to the list element
   @ViewChild('scheduleList', { static: true }) scheduleList: IonList;
+
+  public expoSchedule: ScheduleItem[] = [];
+  public daySchedule: ScheduleItem[] = [];
+  public selectedDay: number = 0; // Initial selected day
 
   ios: boolean;
   dayIndex = 0;
@@ -34,13 +40,41 @@ export class SchedulePage implements OnInit {
     public routerOutlet: IonRouterOutlet,
     public toastCtrl: ToastController,
     public user: UserData,
-    public config: Config
-  ) { }
+    public config: Config,
+    private dataService: DataService,
+  ) {
+    this.dataService.getConferenceSchedule().subscribe( data => { 
+      this.expoSchedule = data as ScheduleItem[]
+      this.sortScheduleByStartTime();
+      console.log(this.expoSchedule);
+  });
+   }
 
   ngOnInit() {
     this.updateSchedule();
 
     this.ios = this.config.get('mode') === 'ios';
+  }
+
+  sortScheduleByStartTime() {
+    this.expoSchedule.sort((a: any, b: any) => a.timeStart - b.timeStart);
+  }
+
+  setSelectedDay(day: number) {
+    this.selectedDay = day;
+    console.log("selected day is " + day);
+    this.setDaySchedule(day);
+  }
+
+  setDaySchedule(day: number) {
+    this.daySchedule = this.expoSchedule.filter((schedule) => {
+      const scheduleDate = new Date(schedule.timeStart?.seconds * 1000);
+      if (scheduleDate.getDate() === day){
+        console.log("schedule day filtered for day " + scheduleDate.getDate());
+        return true;
+      } else { return false}
+    });
+    // console.log(this.daySchedule)
   }
 
   updateSchedule() {
