@@ -1,11 +1,12 @@
 <ion-header>
-  <ion-toolbar color="warning">
+  <ion-toolbar color="expoBlue">
     <ion-buttons slot="start">
       <ion-menu-button></ion-menu-button>
     </ion-buttons>
-    <ion-title>Floor Plan</ion-title>
+    <ion-title color="light">Floor Plan</ion-title>
   </ion-toolbar>
   <ion-segment
+  class="button-bar"
     [scrollable]="true"
     (ionChange)="segmentChanged($event)"
     value="list"

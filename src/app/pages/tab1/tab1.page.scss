@@ -6,6 +6,24 @@ app-agenda-card {
    margin-bottom: 80px;
 }
 
+.button-bar{
+  background-color: #ffaa32;
+}
+
+ion-segment-button{
+  background-color: #ffaa32;
+}
+
+ion-segment-button:hover{
+  background-color: #fc9505;
+  
+}
+
+.segment-button-checked::part(native) {
+  color: #041a51;
+  border-bottom: 2px solid #041a51;
+}
+
 .button{
     display: flex;
     flex-direction: column;

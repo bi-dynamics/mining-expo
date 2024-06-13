@@ -24,3 +24,21 @@
   margin-left: 1rem;
   margin-right: 1rem;
 }
+
+.button-bar{
+  background-color: #ffaa32;
+}
+
+ion-segment-button{
+  background-color: #ffaa32;
+  
+}
+
+ion-segment-button:hover{
+  background-color: #fc9505;
+  
+}
+.segment-button-checked::part(native) {
+  color: #041a51;
+  border-bottom: 2px solid #041a51;
+}

@@ -46,7 +46,7 @@ export class SchedulePage implements OnInit {
     this.dataService.getConferenceSchedule().subscribe( data => { 
       this.expoSchedule = data as ScheduleItem[]
       this.sortScheduleByStartTime();
-      console.log(this.expoSchedule);
+      
   });
    }
 
@@ -62,7 +62,6 @@ export class SchedulePage implements OnInit {
 
   setSelectedDay(day: number) {
     this.selectedDay = day;
-    console.log("selected day is " + day);
     this.setDaySchedule(day);
   }
 
@@ -70,11 +69,11 @@ export class SchedulePage implements OnInit {
     this.daySchedule = this.expoSchedule.filter((schedule) => {
       const scheduleDate = new Date(schedule.timeStart?.seconds * 1000);
       if (scheduleDate.getDate() === day){
-        console.log("schedule day filtered for day " + scheduleDate.getDate());
+        
         return true;
       } else { return false}
     });
-    // console.log(this.daySchedule)
+
   }
 
   updateSchedule() {
