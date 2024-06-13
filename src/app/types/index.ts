@@ -49,6 +49,10 @@ export interface SpeakerList {
   speakerName: string;
   title?: string;
   profilePicture?: string;
+  bio?: string;
+  email?: string;
+  linkedinProfile?: string;
+  websiteLink?: string;
 }
 
 export interface Speaker {
