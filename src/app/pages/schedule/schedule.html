@@ -1,58 +1,47 @@
 <ion-header translucent="true">
-  <ion-toolbar color="warning">
- 
-    <ion-buttons *ngIf="!showSearchbar" slot="start">
-      <ion-menu-button></ion-menu-button>
-    </ion-buttons>
-    <!--
-    <ion-segment *ngIf="ios" [(ngModel)]="segment" (ionChange)="updateSchedule()">
-      <ion-segment-button value="all">
-        All
-      </ion-segment-button>
-      <ion-segment-button value="favorites">
-        Favorites
-      </ion-segment-button>
-    </ion-segment>
-    -->
-    <ion-title *ngIf="!ios && !showSearchbar">Main Expo Schedule</ion-title>
-    <ion-searchbar *ngIf="showSearchbar" showCancelButton="always" [(ngModel)]="queryText" (ionInput)="updateSchedule()" (ionCancel)="showSearchbar = false" placeholder="Search"></ion-searchbar>
-    <ion-buttons slot="end">
-      <ion-button *ngIf="!ios && !showSearchbar" (click)="showSearchbar = true">
-        <ion-icon slot="icon-only" name="search"></ion-icon>
-      </ion-button>
-   <!--   <ion-button *ngIf="!showSearchbar" (click)="presentFilter()">
-        <span *ngIf="ios">Filter</span>
-        <span *ngIf="!ios">
-          <ion-icon slot="icon-only" name="options"></ion-icon>
-        </span>
-      </ion-button>-->
-    </ion-buttons>
+  <ion-toolbar color="expoBlue">
+    <ion-buttons slot="start">
+      <ion-menu-button color="warning"></ion-menu-button>
+      </ion-buttons>
+    <ion-title color="light">
+      Main Expo Schedule
+    </ion-title>
   </ion-toolbar>
-  <!--
-  <ion-toolbar *ngIf="!ios">
-    <ion-segment [(ngModel)]="segment" (ionChange)="updateSchedule()">
-      <ion-segment-button value="all">
-        All
-      </ion-segment-button>
-      <ion-segment-button value="favorites">
-        Favorites
-      </ion-segment-button>
-    </ion-segment>
-  </ion-toolbar>
-  -->
 </ion-header>
 
-<ion-content fullscreen="true">
-  <ion-header collapse="condense">
-    <ion-toolbar>
-      <ion-title size="large">Main Expo Schedule</ion-title>
-    </ion-toolbar>
-    <ion-toolbar>
-      <ion-searchbar [(ngModel)]="queryText" (ionInput)="updateSchedule()" placeholder="Search"></ion-searchbar>
-    </ion-toolbar>
-  </ion-header>
+<ion-content class="page-content" fullscreen="true">
 
-  <ion-list #scheduleList [hidden]="shownSessions === 0">
+  <ion-item-divider sticky class="button-bar">
+  <ion-toolbar>
+      <ion-segment class="button-bar" value="days">
+        <ion-segment-button class="button-wrapper" value="day1" (click)="setSelectedDay(30)" >
+          <ion-label class="button" color="expoBlue" ><div>Day 1</div><div>August 07</div></ion-label>
+        </ion-segment-button>
+        <ion-segment-button class="button-wrapper" value="day2" (click)="setSelectedDay(31)">
+          <ion-label class="button" ><div>Day 2</div><div>August 08</div></ion-label>
+        </ion-segment-button>
+      </ion-segment>
+    </ion-toolbar>
+  </ion-item-divider>
+
+  
+  <div class="ion-padding" *ngIf="selectedDay === 0">
+    <app-agenda-card
+      *ngFor="let schedule of expoSchedule"
+      [schedule]="schedule"
+    ></app-agenda-card>
+  </div>
+
+  <div class="ion-padding" *ngIf="selectedDay !== 0">
+    <app-agenda-card
+    *ngFor="let schedule of daySchedule"
+    [schedule]="schedule"
+    ></app-agenda-card>
+  </div>
+
+  <div class="ion-padding"></div>
+
+  <!-- <ion-list #scheduleList [hidden]="shownSessions === 0">
     <ion-item-group *ngFor="let group of groups" [hidden]="group.hide">
       <ion-item-divider sticky>
         <ion-label>
@@ -105,5 +94,5 @@
         <ion-icon name="logo-facebook"></ion-icon>
       </ion-fab-button>
     </ion-fab-list>
-  </ion-fab>
+  </ion-fab> -->
 </ion-content>

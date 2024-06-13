@@ -13,7 +13,7 @@ export class AgendaService {
       speakerIds: [],
       startTime: "08/30/2023 12:30 PM",
       endTime: "14:00 PM",
-      description: "",
+      description: "test",
     },
     {
       id: 2,

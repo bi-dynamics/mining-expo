@@ -34,11 +34,12 @@ ion-menu.md ion-list {
 }
 
 ion-menu.md ion-list-header {
-  background: linear-gradient(to right, #fc9705, #F5A936);
+  background: linear-gradient(to right, #041a51, #06277a);
   padding: 6px;
   letter-spacing: .1em;
   text-transform: uppercase;
   font-weight: 150;
+  color: white;
   border-radius: 0 150px 0px 0; 
  
 }
@@ -58,10 +59,7 @@ ion-menu.md ion-item.selected ion-icon {
   color: var(--ion-color-primary);
 }
 
-ion-menu.md ion-list-header,
-ion-menu.md ion-item ion-icon {
- 
-}
+
 
 ion-menu.md ion-list:not(:last-of-type) {
   border-bottom: 1px solid var(--ion-color-step-150, #d7d8da);

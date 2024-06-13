@@ -1,17 +1,24 @@
 <ion-card
+
   [ngClass]="{
     'card-button': button,
     'safe-area': safeArea
   }"
   [button]="button"
-  [style.backgroundImage]="'url(' + speaker.photoUrl + ')'"
   (click)="presentModal()"
->
+  [style.backgroundImage]="'url(' + speaker.profilePicture + ')'"
+  >
+  <img alt="2023 Mining Expo & Conference" src="{{ speaker.profilePicture }}" />
   <ion-card-header>
-    <ion-card-title>{{ speaker.firstName }} {{ speaker.lastName }}</ion-card-title>
-    <ion-card-subtitle>{{ speaker.role }}, {{ company.name }}</ion-card-subtitle>
+    <ion-card-title>{{speaker.speakerName}}</ion-card-title>
+    <ion-card-subtitle>{{speaker.title}}</ion-card-subtitle>
+
+    
+
+    <!-- <ion-card-title>{{ speaker.firstName }} {{ speaker.lastName }}</ion-card-title>
+    <ion-card-subtitle>{{ speaker.role }}, {{ company.name }}</ion-card-subtitle> -->
   </ion-card-header>
-  <ion-card-content>
+  <!-- <ion-card-content>
     <img [src]="company.logoUrl" />
-  </ion-card-content>
+  </ion-card-content> -->
 </ion-card>

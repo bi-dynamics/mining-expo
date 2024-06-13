@@ -1,4 +1,4 @@
-<ion-card
+<!-- <ion-card
   (click)="navigateToAgendaItemPage()"
   [button]="true"
 >
@@ -12,4 +12,38 @@
       </ion-card-subtitle>
   </ion-card-header>
   <ion-card-content>{{ formatTalkTime(agenda) }}</ion-card-content>
-</ion-card>
+</ion-card> -->
+
+<ion-accordion-group>
+  
+    <ion-accordion value="first" [toggleIcon]="shouldToggleIcon()"  [readonly]="shouldToggleReadOnly()">
+      <ion-item class="ion" slot="header" >
+        <div class="flex">
+          <ion-label class="name">
+            <div class="date-time">
+              <!-- <div>{{formatDate(schedule.timeStart)}}</div> -->
+              <div>{{formatTime(schedule.timeStart)}}</div>
+            </div>
+          </ion-label>
+        <ion-label>
+          <div>{{schedule.name}}</div>
+          <div>{{schedule.location}}</div>
+        </ion-label>
+      </div>
+    </ion-item>
+    <div class="ion-padding" slot="content">
+      {{schedule.description}}
+      <div class="label-container" *ngIf="schedule.speakers">
+        <p class="speaker-label">Speakers:</p>
+        <div class="speaker-container" *ngFor="let speaker of schedule.speakers">
+          <img [src]="speaker.speakerProfilePicture" width="50" height="50" [alt]="speaker.speakerName"/>
+          <div>
+            <p>{{speaker.speakerName}}</p>
+            <p>{{speaker.speakerTitle}}</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </ion-accordion>
+  
+</ion-accordion-group>

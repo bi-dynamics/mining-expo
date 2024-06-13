@@ -12,44 +12,33 @@
   border-radius: 10px; /* Add rounded corners for aesthetics */
 }
 
-.zoom-pane {
-  width: 100% !important;
-  height: 100% !important;
-  }
-
-  .zoom-pane .scroll {
-    min-height: 100% !important;
-    display: -webkit-box;
-    display: -moz-box;
-    display: -ms-flexbox;
-    display: -webkit-flex;
-    display: flex;
-    -webkit-box-direction: normal;
-    -moz-box-direction: normal;
-    -webkit-box-orient: horizontal;
-    -moz-box-orient: horizontal;
-    -webkit-flex-direction: row;
-    -ms-flex-direction: row;
-    flex-direction: row;
-    -webkit-flex-wrap: nowrap;
-    -ms-flex-wrap: nowrap;
-    flex-wrap: nowrap;
-    -webkit-box-pack: center;
-    -moz-box-pack: center;
-    -webkit-justify-content: center;
-    -ms-flex-pack: center;
-    justify-content: center;
-    -webkit-align-content: stretch;
-    -ms-flex-line-pack: stretch;
-    align-content: stretch;
-    -webkit-box-align: center;
-    -moz-box-align: center;
-    -webkit-align-items: center;
-    -ms-flex-align: center;
-    align-items: center;    
+.swiper-zoom-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
 }
 
-.zoom-pane img {
-    width: 100% !important;
-    vertical-align: top !important;
+#overview-map {
+  max-height: 75dvh;
+  margin-left: 1rem;
+  margin-right: 1rem;
+}
+
+.button-bar{
+  background-color: #ffaa32;
+}
+
+ion-segment-button{
+  background-color: #ffaa32;
+  
+}
+
+ion-segment-button:hover{
+  background-color: #fc9505;
+  
+}
+.segment-button-checked::part(native) {
+  color: #041a51;
+  border-bottom: 2px solid #041a51;
 }

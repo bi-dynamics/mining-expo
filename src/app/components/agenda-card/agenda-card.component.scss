@@ -10,6 +10,94 @@ ion-card {
   box-shadow: none;
 }
 
+.flex {
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: row;
+  padding: 8px 0;
+  gap: 12px;
+}
+
+ion-accordion {
+  margin-bottom: 24px;
+}
+ion-item ion-label:nth-child(1) {
+  color: #020817;
+  font-weight: 600;
+}
+
+ion-item ion-label:nth-child(2) {
+  font-weight: 800;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+
+  div:nth-child(1) {
+    color: #020817;
+    text-wrap: wrap;
+  }
+  div:nth-child(2) {
+    background-color: #ffe8c0;
+    border-radius: 8px;
+    padding: 8px 8px;
+    color: #f4a634;
+    width: fit-content;
+  }
+}
+
+ion-item:hover {
+  --color: #f4a634;
+  text-decoration: underline;
+  font-weight: 600;
+
+}
+
+ion-accordion ion-item[slot='header'] {
+  border-radius: 8px;
+  border: 1px solid rgb(231, 231, 231);
+  padding: 1rem 18px;
+  background-color: #f4f5f8;
+  --background: #f4f5f8;
+}
+
+ion-accordion ion-item[slot='header']:hover {
+  background-color: white;
+  --background: #ffffff;
+  --color: white;
+
+}
+
+ion-accordion::part(header):hover {
+  --background: #ffffff;
+  --color:white;
+
+}
+
+ion-accordion ion-item[slot='header'] ion-label {
+  overflow: visible;
+}
+
+ion-accordion ion-item[slot='header'] ion-label div.date-time {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  font-weight: 200;
+  width: 3rem;
+}
+
+ion-accordion div[slot='content'] {
+  border-radius: 8px;
+  background-color: white;
+  border: 1px solid rgb(231, 231, 231);
+  padding: 2rem;
+  display: flex;
+  gap: 32px;
+  align-items: flex-start;
+  justify-content: center;
+  flex-direction: column;
+}
+
+
 ion-card-header {
   padding-bottom: 2px;
 }
@@ -29,4 +117,47 @@ ion-card-header ion-card-subtitle {
 
 ion-card-content {
   font-size: 12px;
+}
+
+.label-container {
+  display: flex;
+  gap: 16px;
+  align-items: center;
+  justify-content: flex-start;
+  flex-wrap: wrap;
+}
+.speaker-label {
+  font-weight: 600;
+}
+
+.speaker-container {
+  height: fit-content;
+  width: fit-content;
+  display: flex;
+  flex-wrap: wrap;
+  background-color: #f4f5f8;
+  padding: 8px 16px;
+  gap: 16px;
+  border-radius: 8px;
+
+  img {
+    border-radius: 9999px;
+  }
+
+  div {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: center ;
+  }
+
+  p:nth-child(1){
+    font-size: 16px;
+    font-weight: 400;
+  }
+  p:nth-child(2){
+    color: #02081778;
+    font-size: 14px;
+    font-weight: 600;
+  }
 }

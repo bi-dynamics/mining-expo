@@ -1,9 +1,9 @@
 <ion-header [style.visibility]="content_visibility">
-  <ion-toolbar color="warning">
+  <ion-toolbar color="expoBlue">
     <ion-buttons slot="start">
       <ion-menu-button></ion-menu-button>
     </ion-buttons>
-    <ion-title>Scan QR Code</ion-title>
+    <ion-title color="light">Scan QR Code</ion-title>
   </ion-toolbar>
 </ion-header>
 
@@ -14,7 +14,7 @@
    [width]="356"
    [errorCorrectionLevel]="'M'"></qrcode>
   </ion-card-content>
-  <ion-button color="warning" expand="block" (click)="startScan()">
+  <ion-button color="expoBlue" expand="block" (click)="startScan()">
   <ion-icon name="scan" slot="start"></ion-icon>
   Scan
 </ion-button>
@@ -40,7 +40,7 @@
 
 <ion-row>
   <ion-col class="ion-no-padding">
-    <ion-button color="warning" expand="full" (click)="addScan()">Submit</ion-button>
+    <ion-button color="expoBlue" expand="full" (click)="addScan()">Submit</ion-button>
   </ion-col>
 </ion-row>
 </ion-content>

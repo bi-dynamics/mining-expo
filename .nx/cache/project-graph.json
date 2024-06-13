@@ -13600,6 +13600,15 @@
         "hash": "sha512-/9HIEs1ZXGhSPE8X6Ccm7Nam1z8KcoCqPdI7ecm1N33EzAetWahvQWVqLZtaZQ+IDKX4IyA2o0gBzqIMkAagHQ=="
       }
     },
+    "npm:ssr-window": {
+      "type": "npm",
+      "name": "npm:ssr-window",
+      "data": {
+        "version": "4.0.2",
+        "packageName": "ssr-window",
+        "hash": "sha512-ISv/Ch+ig7SOtw7G2+qkwfVASzazUnvlDTwypdLoPoySv+6MqlOV10VwPSE6EWkGjhW50lUmghPmpYZXMu/+AQ=="
+      }
+    },
     "npm:stack-trace": {
       "type": "npm",
       "name": "npm:stack-trace",
@@ -13850,6 +13859,15 @@
         "version": "3.6.0",
         "packageName": "sw-toolbox",
         "hash": "sha512-v/hu7KQQtospyDLpZxz7m5c7s90aj53YEkJ/A8x3mLPlSgIkZ6RKJkTjBG75P1p/fo5IeSA4TycyJg3VSu/aPw=="
+      }
+    },
+    "npm:swiper": {
+      "type": "npm",
+      "name": "npm:swiper",
+      "data": {
+        "version": "9.2.2",
+        "packageName": "swiper",
+        "hash": "sha512-rXicgpm8XRziyZ6TZ4NnZNb6FrhDH0M7X16WoHyzDp5HNHqXGe2BMXBQhfDDGUfhWcSIqeGSvPL9bQzK7Qr+dw=="
       }
     },
     "npm:symbol-observable": {
@@ -32834,6 +32852,13 @@
       {
         "source": "npm:path-to-regexp@1.8.0",
         "target": "npm:isarray@0.0.1",
+        "type": "static"
+      }
+    ],
+    "npm:swiper": [
+      {
+        "source": "npm:swiper",
+        "target": "npm:ssr-window",
         "type": "static"
       }
     ],

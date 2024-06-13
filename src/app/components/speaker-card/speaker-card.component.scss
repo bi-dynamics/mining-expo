@@ -34,7 +34,8 @@ ion-card-header {
 
   width: 100%;
 
-  background: linear-gradient(180deg, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 0.7) 100%);
+  // background: linear-gradient(180deg, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 0.7) 100%);
+  background: linear-gradient(180deg, rgba(0, 0, 0, 0) 0%, #041a51 100%);
 }
 
 ion-card-title,
@@ -44,12 +45,13 @@ ion-card-subtitle {
 
 ion-card-header ion-card-title {
   margin: 0 0 6px 0;
-
   font-size: 22px;
-}
 
-ion-card-header ion-card-subtitle {
-  text-transform: none;
+font-weight: 700;
+  }
+  
+  ion-card-header ion-card-subtitle {
+    text-transform: none;
 
   font-weight: 500;
   font-size: 16px;

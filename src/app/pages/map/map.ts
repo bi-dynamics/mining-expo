@@ -2,8 +2,8 @@ import { Component, ElementRef, Inject, ViewChild, AfterViewInit } from '@angula
 import { ConferenceData } from '../../providers/conference-data';
 import { Platform } from '@ionic/angular';
 import { DOCUMENT} from '@angular/common';
-
 import { darkStyle } from './map-dark-style';
+import { IonicSlides } from '@ionic/angular'; //Import Ionic slides module for Swiper package
 
 @Component({
   selector: 'page-map',
@@ -15,6 +15,7 @@ export class MapPage implements AfterViewInit {
   public segment: string = "list";
   @ViewChild('mapCanvas', { static: true }) mapElement: ElementRef;
 
+  swiperModules = [IonicSlides];  // Install Swiper modules
   constructor(
     @Inject(DOCUMENT) private doc: Document,
     public confData: ConferenceData,

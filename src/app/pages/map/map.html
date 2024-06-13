@@ -1,87 +1,162 @@
 <ion-header>
-  <ion-toolbar color="warning">
+  <ion-toolbar color="expoBlue">
     <ion-buttons slot="start">
       <ion-menu-button></ion-menu-button>
     </ion-buttons>
-    <ion-title>Floor Plan</ion-title>
+    <ion-title color="light">Floor Plan</ion-title>
   </ion-toolbar>
-  <ion-segment [scrollable]="true" (ionChange)="segmentChanged($event)" value="list">
-    <ion-segment-button value="list">
-      Map
-    </ion-segment-button>
+  <ion-segment
+  class="button-bar"
+    [scrollable]="true"
+    (ionChange)="segmentChanged($event)"
+    value="list"
+  >
+    <ion-segment-button value="list">Overview Map </ion-segment-button>
     <ion-segment-button value="balcony">
-     Camelthorn Balcony
+      Camelthorn Balcony
     </ion-segment-button>
-    <ion-segment-button value="camelthorn">
-      Camelthorn
-    </ion-segment-button>
-    <ion-segment-button value="galpini">
-      Galpini
-    </ion-segment-button>
-    <ion-segment-button value="baobab">
-      Baobab
-    </ion-segment-button>
-    <ion-segment-button value="mopane">
-      Mopane Hall
-    </ion-segment-button>
-    <ion-segment-button value="maerua">
-      Maerua Hall
-    </ion-segment-button>
-
+    <ion-segment-button value="camelthorn"> Camelthorn </ion-segment-button>
+    <ion-segment-button value="galpini"> Galpini </ion-segment-button>
+    <ion-segment-button value="baobab"> Baobab </ion-segment-button>
+    <ion-segment-button value="mopane"> Mopane Hall </ion-segment-button>
+    <ion-segment-button value="maerua"> Maerua Hall </ion-segment-button>
   </ion-segment>
 </ion-header>
 
 <ion-content>
-
-  <ion-content>
-    <ion-list
-      class="animate__animated animate__slideInUp animate__fast"
-      *ngIf="segment === 'list'"
+  <ion-list
+    class="animate__animated animate__slideInUp animate__fast"
+    *ngIf="segment === 'list'"
+  >
+    <swiper-container
+      [modules]="swiperModules"
+      zoom="true"
+      [centeredSlides]="true"
     >
-    <div class="zoom-pane" id="mapImage"
-    zooming="true"
-    direction="xy"
-    delegate-handle="zoom-pane"
-    class="zoom-pane"
-    min-zoom="1"
-    max-zoom="15"
-    overflow-scroll="false">
+      <swiper-slide class="floor-plan-container">
+        <div class="swiper-zoom-container">
+          <img
+            [src]="'https://firebasestorage.googleapis.com/v0/b/mining-expo-bc804.appspot.com/o/img%2Ffloor_plans%2FMiningExpoPlan2023.webp?alt=media&token=db9d496d-2c11-494c-9f87-07d3899530b7'"
+            class="floor-plan-image"
+            id="overview-map"
+          />
+        </div>
+      </swiper-slide>
+    </swiper-container>
+  </ion-list>
+  <ion-list
+    class="animate__animated animate__slideInUp animate__fast"
+    *ngIf="segment === 'balcony'"
+  >
+    <swiper-container [modules]="swiperModules" zoom="true">
+      <swiper-slide class="floor-plan-container">
+        <div class="swiper-zoom-container">
+          <img
+            [src]="'https://firebasestorage.googleapis.com/v0/b/mining-expo-bc804.appspot.com/o/img%2Ffloor_plans%2FFloorPlans_page-0001.webp?alt=media&token=06cc3de8-47d5-47d9-8443-4fa77347c022'"
+            class="floor-plan-image"
+          />
+        </div>
+      </swiper-slide>
+    </swiper-container>
+  </ion-list>
 
-    <ion-img [src]="'https://miningexponamibia.com/wp-content/uploads/2020/09/MiningExpoPlan2023.png'" class="floor-plan-image"></ion-img>
-   </div>
-    </ion-list>
-    <ion-list  class="animate__animated animate__slideInUp animate__fast" *ngIf="segment === 'balcony'">
-       <div class="floor-plan-container">
-    <ion-img [src]="'https://miningexponamibia.com/wp-content/uploads/2020/09/CamelthornBalcony.webp'" class="floor-plan-image"></ion-img>
-  </div></ion-list>
+  <ion-list
+    class="animate__animated animate__slideInUp animate__fast"
+    *ngIf="segment === 'camelthorn'"
+  >
+    <swiper-container
+      [modules]="swiperModules"
+      zoom="true"
+      [centeredSlides]="true"
+    >
+      <swiper-slide class="floor-plan-container">
+        <div class="swiper-zoom-container">
+          <img
+            [src]="'https://firebasestorage.googleapis.com/v0/b/mining-expo-bc804.appspot.com/o/img%2Ffloor_plans%2FFloorPlans_page-0002.webp?alt=media&token=d2cf8cfd-bd90-486f-9704-1947674f0928'"
+            class="floor-plan-image"
+          />
+        </div>
+      </swiper-slide>
+    </swiper-container>
+  </ion-list>
 
-  <ion-list  class="animate__animated animate__slideInUp animate__fast" *ngIf="segment === 'camelthorn'">
-    <div class="floor-plan-container">
- <ion-img [src]="'https://miningexponamibia.com/wp-content/uploads/2020/09/Camelthorn.webp'" class="floor-plan-image"></ion-img>
-</div></ion-list>
+  <ion-list
+    class="animate__animated animate__slideInUp animate__fast"
+    *ngIf="segment === 'galpini'"
+  >
+    <swiper-container
+      [modules]="swiperModules"
+      zoom="true"
+      [centeredSlides]="true"
+    >
+      <swiper-slide class="floor-plan-container">
+        <div class="swiper-zoom-container">
+          <img
+            [src]="'https://firebasestorage.googleapis.com/v0/b/mining-expo-bc804.appspot.com/o/img%2Ffloor_plans%2FFloorPlans_page-0003.webp?alt=media&token=d5899ab8-6637-4275-b879-22cc86f9033b'"
+            class="floor-plan-image"
+          />
+        </div>
+      </swiper-slide>
+    </swiper-container>
+  </ion-list>
 
-<ion-list  class="animate__animated animate__slideInUp animate__fast" *ngIf="segment === 'galpini'">
-  <div class="floor-plan-container">
-<ion-img [src]="'https://miningexponamibia.com/wp-content/uploads/2020/09/Galpini.webp'" class="floor-plan-image"></ion-img>
-</div></ion-list>
+  <ion-list
+    class="animate__animated animate__slideInUp animate__fast"
+    *ngIf="segment === 'baobab'"
+  >
+    <swiper-container
+      [modules]="swiperModules"
+      zoom="true"
+      [centeredSlides]="true"
+    >
+      <swiper-slide class="floor-plan-container">
+        <div class="swiper-zoom-container">
+          <img
+            [src]="'https://firebasestorage.googleapis.com/v0/b/mining-expo-bc804.appspot.com/o/img%2Ffloor_plans%2FFloorPlans_page-0004.webp?alt=media&token=db88dec0-c333-4f69-a582-7def0af127ec'"
+            class="floor-plan-image"
+          />
+        </div>
+      </swiper-slide>
+    </swiper-container>
+  </ion-list>
 
+  <ion-list
+    class="animate__animated animate__slideInUp animate__fast"
+    *ngIf="segment === 'mopane'"
+  >
+    <swiper-container
+      [modules]="swiperModules"
+      zoom="true"
+      [centeredSlides]="true"
+    >
+      <swiper-slide class="floor-plan-container">
+        <div class="swiper-zoom-container">
+          <img
+            [src]="'https://firebasestorage.googleapis.com/v0/b/mining-expo-bc804.appspot.com/o/img%2Ffloor_plans%2FFloorPlans_page-0005.webp?alt=media&token=16bff111-2ba2-4cba-998d-d41b7a37422a'"
+            class="floor-plan-image"
+          />
+        </div>
+      </swiper-slide>
+    </swiper-container>
+  </ion-list>
 
-<ion-list  class="animate__animated animate__slideInUp animate__fast" *ngIf="segment === 'baobab'">
-  <div class="floor-plan-container">
-<ion-img [src]="'https://miningexponamibia.com/wp-content/uploads/2020/09/Boabab.webp'" class="floor-plan-image"></ion-img>
-</div></ion-list>
-
-<ion-list  class="animate__animated animate__slideInUp animate__fast" *ngIf="segment === 'mopane'">
-  <div class="floor-plan-container">
-<ion-img [src]="'https://miningexponamibia.com/wp-content/uploads/2020/09/Mopane.webp'" class="floor-plan-image"></ion-img>
-</div></ion-list>
-
-<ion-list  class="animate__animated animate__slideInUp animate__fast" *ngIf="segment === 'maerua'">
-  <div class="floor-plan-container">
-<ion-img [src]="'https://miningexponamibia.com/wp-content/uploads/2020/09/Maerua.webp'" class="floor-plan-image"></ion-img>
-</div></ion-list>
-
-  </ion-content>
-
-
+  <ion-list
+    class="animate__animated animate__slideInUp animate__fast"
+    *ngIf="segment === 'maerua'"
+  >
+    <swiper-container
+      [modules]="swiperModules"
+      zoom="true"
+      [centeredSlides]="true"
+    >
+      <swiper-slide class="floor-plan-container">
+        <div class="swiper-zoom-container">
+          <img
+            [src]="'https://firebasestorage.googleapis.com/v0/b/mining-expo-bc804.appspot.com/o/img%2Ffloor_plans%2FFloorPlans_page-0006.webp?alt=media&token=8a715e94-9856-4923-88c0-865203f3f489'"
+            class="floor-plan-image"
+          />
+        </div>
+      </swiper-slide>
+    </swiper-container>
+  </ion-list>
 </ion-content>
