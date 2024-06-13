@@ -6,13 +6,12 @@
   }"
   [button]="button"
   (click)="presentModal()"
-  [style.backgroundColor]="' lightblue'"
   [style.backgroundImage]="'url(' + speaker.profilePicture + ')'"
   >
   <img alt="2023 Mining Expo & Conference" src="{{ speaker.profilePicture }}" />
   <ion-card-header>
     <ion-card-title>{{speaker.speakerName}}</ion-card-title>
-    <ion-card-title>{{speaker.title}}</ion-card-title>
+    <ion-card-subtitle>{{speaker.title}}</ion-card-subtitle>
 
     
 

@@ -47,7 +47,8 @@ export class SpeakerCardComponent implements OnInit {
     const modal = await this.modalController.create({
       component: SpeakerViewComponent,
       componentProps: {
-        id: this.id
+        id: this.id,
+        speaker: this.speaker
       }
     });
 

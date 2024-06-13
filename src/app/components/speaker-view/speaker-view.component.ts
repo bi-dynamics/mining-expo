@@ -12,9 +12,11 @@ import { DataService } from '../../services/data.service';
 })
 export class SpeakerViewComponent implements OnInit {
   public speakers: SpeakerList[] | null;
-  public speaker: Speaker;
+  // public speaker: Speaker;
 
   @Input() id: number;
+  @Input() speaker: SpeakerList;
+
 
   constructor(
     private speakerService: SpeakerService,
@@ -24,10 +26,10 @@ export class SpeakerViewComponent implements OnInit {
 
   ngOnInit() {
     // this.speaker = this.speakerService.getSpeaker(this.id);
-    this.dataService.getSpeakers().subscribe(data => {
-      this.speakers = data as SpeakerList[]
+    // this.dataService.getSpeakers().subscribe(data => {
+    //   this.speakers = data as SpeakerList[]
       
-    })
+    // })
   }
 
   closeModal() {
