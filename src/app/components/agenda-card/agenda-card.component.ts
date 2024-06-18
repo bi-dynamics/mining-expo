@@ -29,7 +29,7 @@ export class AgendaCardComponent implements OnInit {
     // this.agenda = this.agendaService.getAgendaItem(this.id);
     // this.speakers = this.speakerService.getSpeakers(this.agenda.speakerIds);
     // this.photoUrls = this.speakers.map(speaker => speaker.photoUrl);
-    console.log(this.schedule.speakers.speakerName)
+    
   }
 
   //To enable or disable opening the accordion
