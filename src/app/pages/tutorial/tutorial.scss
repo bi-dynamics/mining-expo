@@ -18,7 +18,29 @@
 .image{
   text-align: center;
   margin-top: 45px;
+  padding: 0 16px;
+  
 }
+
+.header-images{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 16px;
+}
+
+.ios img.header-image{
+  width: 1024px;
+  height: 1024px;
+}
+
+.header-image{
+  object-fit: contain;
+  width: 200px;
+  height: auto;
+}
+
 .social-login{
   margin-top: 45px;
   text-align: center;

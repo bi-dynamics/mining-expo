@@ -1,8 +1,12 @@
+ion-list{
+  height: 100%;
+}
 .floor-plan-container {
   display: flex;
   justify-content: center;
   align-items: center;
   height: 100%; /* Set the height to occupy the entire viewport */
+width: 100%;  
 }
 
 .floor-plan-image {
@@ -17,6 +21,7 @@
   justify-content: center;
   align-items: center;
   width: 100%;
+  height: 100%;
 }
 
 #overview-map {
@@ -26,13 +31,13 @@
 }
 
 .button-bar{
-  background-color: #ffaa32;
+  background-color: #FC9705;
 }
 
-ion-segment-button{
-  background-color: #ffaa32;
+// ion-segment-button{
+//   background-color: #ffaa32;
   
-}
+// }
 
 ion-segment-button:hover{
   background-color: #fc9505;

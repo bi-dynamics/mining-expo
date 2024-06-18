@@ -21,7 +21,7 @@ ion-segment-button:hover{
 
 .segment-button-checked::part(native) {
   color: #041a51;
-  border-bottom: 2px solid #041a51;
+  background-color: white;
 }
 
 .button{

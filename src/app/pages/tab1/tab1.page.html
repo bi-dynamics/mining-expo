@@ -1,7 +1,7 @@
 <ion-header translucent="true">
-  <ion-toolbar color="expoBlue">
+  <ion-toolbar color="warning">
     <ion-buttons slot="start">
-      <ion-menu-button color="warning"></ion-menu-button>
+      <ion-menu-button ></ion-menu-button>
       </ion-buttons>
     <ion-title color="light">
       Conference Schedule
@@ -11,8 +11,8 @@
 
  <ion-content class="page-content" [fullscreen]="true">
 
-  <ion-item-divider sticky class="button-bar">
-    <ion-toolbar >
+  <ion-item-divider sticky color="warning">
+    <ion-toolbar color="warning">
         <ion-segment value="days" class="button-bar">
           <ion-segment-button value="day1" (click)="setSelectedDay(30)" >
             <ion-label class="button" ><div>Day 1</div><div>August 07</div></ion-label>
