@@ -27,17 +27,12 @@
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  gap: 16px;
 }
 
-.ios img.header-image{
-  width: 1024px;
-  height: 1024px;
-}
 
 .header-image{
   object-fit: contain;
-  width: 200px;
+  width: 150px;
   height: auto;
 }
 
