@@ -1,5 +1,5 @@
 <ion-header>
-  <ion-toolbar color="expoBlue">
+  <ion-toolbar color="warning">
     <ion-buttons slot="start">
       <ion-menu-button></ion-menu-button>
     </ion-buttons>
@@ -31,7 +31,8 @@
     <swiper-container
       [modules]="swiperModules"
       zoom="true"
-      [centeredSlides]="true"
+      centeredSlides
+      style="height: 100%;"
     >
       <swiper-slide class="floor-plan-container">
         <div class="swiper-zoom-container">
@@ -48,7 +49,8 @@
     class="animate__animated animate__slideInUp animate__fast"
     *ngIf="segment === 'balcony'"
   >
-    <swiper-container [modules]="swiperModules" zoom="true">
+    <swiper-container [modules]="swiperModules" zoom="true" centeredSlides
+    style="height: 100%;">
       <swiper-slide class="floor-plan-container">
         <div class="swiper-zoom-container">
           <img
@@ -68,6 +70,8 @@
       [modules]="swiperModules"
       zoom="true"
       [centeredSlides]="true"
+      centeredSlides
+      style="height: 100%;"
     >
       <swiper-slide class="floor-plan-container">
         <div class="swiper-zoom-container">
@@ -88,6 +92,8 @@
       [modules]="swiperModules"
       zoom="true"
       [centeredSlides]="true"
+      centeredSlides
+      style="height: 100%;"
     >
       <swiper-slide class="floor-plan-container">
         <div class="swiper-zoom-container">
@@ -108,6 +114,8 @@
       [modules]="swiperModules"
       zoom="true"
       [centeredSlides]="true"
+      centeredSlides
+      style="height: 100%;"
     >
       <swiper-slide class="floor-plan-container">
         <div class="swiper-zoom-container">
@@ -128,6 +136,8 @@
       [modules]="swiperModules"
       zoom="true"
       [centeredSlides]="true"
+      centeredSlides
+      style="height: 100%;"
     >
       <swiper-slide class="floor-plan-container">
         <div class="swiper-zoom-container">
@@ -148,6 +158,8 @@
       [modules]="swiperModules"
       zoom="true"
       [centeredSlides]="true"
+      centeredSlides
+      style="height: 100%;"
     >
       <swiper-slide class="floor-plan-container">
         <div class="swiper-zoom-container">

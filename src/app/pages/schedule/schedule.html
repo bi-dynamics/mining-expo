@@ -1,7 +1,7 @@
 <ion-header translucent="true">
-  <ion-toolbar color="expoBlue">
+  <ion-toolbar color="warning">
     <ion-buttons slot="start">
-      <ion-menu-button color="warning"></ion-menu-button>
+      <ion-menu-button></ion-menu-button>
       </ion-buttons>
     <ion-title color="light">
       Main Expo Schedule
@@ -11,10 +11,10 @@
 
 <ion-content class="page-content" fullscreen="true">
 
-  <ion-item-divider sticky class="button-bar">
-  <ion-toolbar>
-      <ion-segment class="button-bar" value="days">
-        <ion-segment-button class="button-wrapper" value="day1" (click)="setSelectedDay(30)" >
+  <ion-item-divider sticky color="warning">
+  <ion-toolbar color="warning">
+      <ion-segment color="wa" value="days">
+        <ion-segment-button color="warning" class="button-wrapper" value="day1" (click)="setSelectedDay(30)" >
           <ion-label class="button" color="expoBlue" ><div>Day 1</div><div>August 07</div></ion-label>
         </ion-segment-button>
         <ion-segment-button class="button-wrapper" value="day2" (click)="setSelectedDay(31)">
