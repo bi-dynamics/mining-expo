@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { Browser } from '@capacitor/browser';
 import { Platform } from '@ionic/angular';
 
 @Component({
@@ -30,5 +31,9 @@ export class BtbPage {
     }, 1000); // Change 1000 to the desired delay in milliseconds (1 second in this example)
 
     console.log('Register for btb');
+  }
+
+  async openLink(link: string) {
+    await Browser.open({ url: link})
   }
 }

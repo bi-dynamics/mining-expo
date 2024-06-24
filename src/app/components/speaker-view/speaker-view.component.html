@@ -11,7 +11,7 @@
     <h2 class="eas-header-large">About {{ speaker.speakerName }}</h2>
     <ion-text>{{ speaker.bio }}</ion-text><br /><br />
 
-    <h2 class="eas-header-large">Connect with {{ speaker.speakerName }}</h2>
+    <h2 class="eas-header-large" *ngIf="speaker.linkedinProfile || speaker.websiteLink">Connect with {{ speaker.speakerName }}</h2>
     <ion-button color="light" class="connect-button" (click)="openLink(speaker.linkedinProfile)" *ngIf="speaker.linkedinProfile">
       <div>
         <ion-icon color="warning" name="logo-linkedin"></ion-icon><br />
@@ -34,9 +34,9 @@
     </ion-button> -->
     <ion-button color="light" class="connect-button" (click)="openLink(speaker.websiteLink)" *ngIf="speaker.websiteLink">
       <div>
+        <ion-icon color="warning" name="globe-outline" size="large"></ion-icon><br />
         <ion-label>Company Website
         </ion-label>
-        <ion-icon color="warning" name="globe-outline" size="large"></ion-icon><br />
       </div>
     </ion-button>
   </div>

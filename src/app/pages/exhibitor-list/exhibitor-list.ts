@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { Router } from '@angular/router';
 import { DataService } from '../../services/data.service';
+import { Browser } from '@capacitor/browser';
 // import { Ng2SearchPipeModule } from 'ng2-search-filter';
 
 @Component({
@@ -37,5 +38,8 @@ export class ExhibitorListPage {
     });
   }
 
+  async openLink(link: string) {
+    await Browser.open({ url: link})
+  }
 
 }
