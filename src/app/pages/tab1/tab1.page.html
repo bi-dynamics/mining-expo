@@ -11,9 +11,9 @@
 
  <ion-content class="page-content" [fullscreen]="true">
 
-  <ion-item-divider sticky color="warning">
-    <ion-toolbar color="warning">
-        <ion-segment value="days" class="button-bar">
+  <!-- <ion-item-divider sticky color="light">
+    <ion-toolbar>
+        <ion-segment value="days" color="light">
           <ion-segment-button value="day1" (click)="setSelectedDay(30)" >
             <ion-label class="button" ><div>Day 1</div><div>August 07</div></ion-label>
           </ion-segment-button>
@@ -22,9 +22,9 @@
           </ion-segment-button>
         </ion-segment>
       </ion-toolbar>
-    </ion-item-divider>
+    </ion-item-divider> -->
 
-  <div class="ion-padding" *ngIf="selectedDay === 0">
+  <!-- <div class="ion-padding" *ngIf="selectedDay === 0">
     <app-agenda-card
       *ngFor="let schedule of conferenceSchedule"
       [schedule]="schedule"
@@ -36,7 +36,27 @@
     *ngFor="let schedule of daySchedule"
     [schedule]="schedule"
     ></app-agenda-card>
-  </div>
+  </div> -->
+  <ion-card>
+    <img alt="Mining Expo Theme" src="https://firebasestorage.googleapis.com/v0/b/mining-expo-bc804.appspot.com/o/img%2Fwebsite_media%2Fmining-expo-gallery-2_resize.webp?alt=media&token=9078be81-f428-4bd6-9a5f-406510bc84a6" />
+    <ion-card-header>
+      <ion-card-title>Mining Conference 2024 Theme</ion-card-title>  
+    </ion-card-header>
+    <ion-card-content>
+      The Theme for this year's event is “Green Shoots for Namibia's Mining Industry: a Season of Opportunity and Growth to Drive Economic Expansion”
+    </ion-card-content>
+  </ion-card>
+
+  <ion-card>
+    <ion-card-header>
+      <ion-card-title>NOTICE</ion-card-title>
+    </ion-card-header>
+  
+    <ion-card-content>
+      Conference programme will be uploaded soon.
+    </ion-card-content>
+    
+  </ion-card>
 
   <div class="ion-padding"></div>
 
