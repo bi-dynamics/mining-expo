@@ -50,6 +50,10 @@ export class DataService {
       return addDoc(scanRef, scan);
     }
 
+    getFloorPlans(){
+      const floorPlansRef = collection(this.firestore, 'floor_plans_2024');
+      return collectionData(floorPlansRef);
+    }
 
 
 }

@@ -30,20 +30,33 @@ width: 100%;
   margin-right: 1rem;
 }
 
-.button-bar{
-  background-color: #FC9705;
+ion-segment-button::part(indicator-background) {
+  background: #ffaa32;
 }
 
-// ion-segment-button{
-//   background-color: #ffaa32;
-  
-// }
-
-ion-segment-button:hover{
-  background-color: #fc9505;
-  
+/* Material Design styles */
+ion-segment-button.md::part(native) {
+  color: #000;
 }
-.segment-button-checked::part(native) {
-  color: #041a51;
-  border-bottom: 2px solid #041a51;
+
+.segment-button-checked.md::part(native) {
+  color: #ffaa32;
+}
+
+ion-segment-button.md::part(indicator-background) {
+  height: 4px;
+}
+
+/* iOS styles */
+ion-segment-button.ios::part(native) {
+  color: #ffaa32;
+  padding: 16px 16px;
+}
+
+.segment-button-checked.ios::part(native) {
+  color: #fff;
+}
+
+ion-segment-button.ios::part(indicator-background) {
+  border-radius: 20px;
 }
