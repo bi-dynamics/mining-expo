@@ -4,6 +4,7 @@ import { Platform } from '@ionic/angular';
 import { DOCUMENT} from '@angular/common';
 import { darkStyle } from './map-dark-style';
 import { IonicSlides } from '@ionic/angular'; //Import Ionic slides module for Swiper package
+import { DataService } from '../../services/data.service';
 
 @Component({
   selector: 'page-map',
@@ -12,16 +13,28 @@ import { IonicSlides } from '@ionic/angular'; //Import Ionic slides module for S
 })
 //galleryType = 'regular';
 export class MapPage implements AfterViewInit {
-  public segment: string = "list";
   @ViewChild('mapCanvas', { static: true }) mapElement: ElementRef;
+  
+  public segment: string = "overview";
+  public floorPlans: any = []
+  public filteredFloorPlans: any = [];
+
 
   swiperModules = [IonicSlides];  // Install Swiper modules
+
   constructor(
     @Inject(DOCUMENT) private doc: Document,
     public confData: ConferenceData,
-    public platform: Platform) {}
+    public platform: Platform,
+    public dataService: DataService,
+  ) {
+    this.dataService.getFloorPlans().subscribe(data => {
+      this.floorPlans = data
+      this.filteredFloorPlans = this.floorPlans.filter(plan => plan.alt.toLowerCase().includes(this.segment));
+    })
+  }
 
-    
+  
   async ngAfterViewInit() {
     const appEl = this.doc.querySelector('ion-app');
     let isDark = false;
@@ -85,6 +98,10 @@ export class MapPage implements AfterViewInit {
   }
   segmentChanged(ev: any) {
     this.segment = ev.detail.value;
+    this.filteredFloorPlans = this.floorPlans.filter(plan => {
+      let lowerCaseAlt = plan.alt.toLowerCase();
+      return lowerCaseAlt === this.segment;
+    });
   }
 }
 

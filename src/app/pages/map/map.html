@@ -3,28 +3,50 @@
     <ion-buttons slot="start">
       <ion-menu-button></ion-menu-button>
     </ion-buttons>
-    <ion-title color="light">Floor Plan</ion-title>
+    <ion-title color="light">Floor Plans</ion-title>
   </ion-toolbar>
   <ion-segment
-  class="button-bar"
+  color="light"
     [scrollable]="true"
     (ionChange)="segmentChanged($event)"
-    value="list"
+    value="overview"
   >
-    <ion-segment-button value="list">Overview Map </ion-segment-button>
-    <ion-segment-button value="balcony">
+    <ion-segment-button value="venue overview">Overview Map </ion-segment-button>
+    <ion-segment-button value="camelthorn balcony">
       Camelthorn Balcony
     </ion-segment-button>
     <ion-segment-button value="camelthorn"> Camelthorn </ion-segment-button>
     <ion-segment-button value="galpini"> Galpini </ion-segment-button>
-    <ion-segment-button value="baobab"> Baobab </ion-segment-button>
-    <ion-segment-button value="mopane"> Mopane Hall </ion-segment-button>
-    <ion-segment-button value="maerua"> Maerua Hall </ion-segment-button>
+    <ion-segment-button value="boabab"> Boabab </ion-segment-button>
+    <ion-segment-button value="mopane hall"> Mopane Hall </ion-segment-button>
+    <ion-segment-button value="maerua hall"> Maerua Hall </ion-segment-button>
   </ion-segment>
 </ion-header>
 
 <ion-content>
   <ion-list
+  *ngFor="let floorplan of filteredFloorPlans "
+    class="animate__animated animate__slideInUp animate__fast"
+  >
+    <swiper-container
+      [modules]="swiperModules"
+      zoom="true"
+      centeredSlides
+      style="height: 100%;"
+    >
+      <swiper-slide class="floor-plan-container">
+        <div class="swiper-zoom-container">
+          <img
+            src={{floorplan.image}}
+            class="floor-plan-image"
+            alt={{floorplan.alt}}
+            id="overview-map"
+          />
+        </div>
+      </swiper-slide>
+    </swiper-container>
+  </ion-list>
+  <!-- <ion-list
     class="animate__animated animate__slideInUp animate__fast"
     *ngIf="segment === 'list'"
   >
@@ -170,5 +192,5 @@
         </div>
       </swiper-slide>
     </swiper-container>
-  </ion-list>
+  </ion-list> -->
 </ion-content>
