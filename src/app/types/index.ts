@@ -36,9 +36,30 @@ export interface ScheduleItem {
   timeStart?: Timestamp;
   tracks?: string;
   speakers?: SpeakersAttending;
+  chairperson?: ChairpersonAttending;
+  moderator?: ModeratorAttending;
+  panelists?: PanelistsAttending;
 }
 
 export interface SpeakersAttending {
+  speakerName: string;
+  speakerTitle: string;
+  speakerProfilePicture?: string;
+}
+
+export interface ChairpersonAttending {
+  speakerName: string;
+  speakerTitle: string;
+  speakerProfilePicture?: string;
+}
+
+export interface ModeratorAttending {
+  speakerName: string;
+  speakerTitle: string;
+  speakerProfilePicture?: string;
+}
+
+export interface PanelistsAttending {
   speakerName: string;
   speakerTitle: string;
   speakerProfilePicture?: string;
