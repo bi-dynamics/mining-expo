@@ -41,7 +41,6 @@ export class Tab1Page implements OnInit {
 
   setSelectedDay(day: number) {
     this.selectedDay = day;
-    console.log("selected day is " + day);
     this.setDaySchedule(day);
   }
 
@@ -49,11 +48,9 @@ export class Tab1Page implements OnInit {
     this.daySchedule = this.conferenceSchedule.filter((schedule) => {
       const scheduleDate = new Date(schedule.timeStart?.seconds * 1000);
       if (scheduleDate.getDate() === day){
-        console.log("schedule day filtered for day " + scheduleDate.getDate());
         return true;
       } else { return false}
     });
-    // console.log(this.daySchedule)
   }
 
   sortScheduleByStartTime() {

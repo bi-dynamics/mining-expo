@@ -27,7 +27,7 @@ register();
 export class AppComponent implements OnInit {
   appPages = [
     {
-      title: 'Main Expo Programme',
+      title: 'Main Expo Schedule',
       url: '/app/tabs/schedule',
       icon: 'calendar'
     },

@@ -43,6 +43,36 @@
           </div>
         </div>
       </div>
+      <div class="label-container" *ngIf="schedule.chairperson">
+        <p class="speaker-label">Chairperson of Session:</p>
+        <div class="speaker-container" *ngFor="let speaker of schedule.chairperson">
+          <img [src]="speaker.speakerProfilePicture" width="50" height="50" [alt]="speaker.speakerName"/>
+          <div>
+            <p>{{speaker.speakerName}}</p>
+            <p>{{speaker.speakerTitle}}</p>
+          </div>
+        </div>
+      </div>
+      <div class="label-container" *ngIf="schedule.moderator">
+        <p class="speaker-label">Moderator:</p>
+        <div class="speaker-container" *ngFor="let speaker of schedule.moderator">
+          <img [src]="speaker.speakerProfilePicture" width="50" height="50" [alt]="speaker.speakerName"/>
+          <div>
+            <p>{{speaker.speakerName}}</p>
+            <p>{{speaker.speakerTitle}}</p>
+          </div>
+        </div>
+      </div>
+      <div class="label-container" *ngIf="schedule.panelists">
+        <p class="speaker-label">Panelists:</p>
+        <div class="speaker-container" *ngFor="let speaker of schedule.panelists">
+          <img [src]="speaker.speakerProfilePicture" width="50" height="50" [alt]="speaker.speakerName"/>
+          <div>
+            <p>{{speaker.speakerName}}</p>
+            <p>{{speaker.speakerTitle}}</p>
+          </div>
+        </div>
+      </div>
     </div>
   </ion-accordion>
   
