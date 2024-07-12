@@ -69,7 +69,6 @@ export class SchedulePage implements OnInit {
     this.daySchedule = this.expoSchedule.filter((schedule) => {
       const scheduleDate = new Date(schedule.timeStart?.seconds * 1000);
       if (scheduleDate.getDate() === day){
-        
         return true;
       } else { return false}
     });
