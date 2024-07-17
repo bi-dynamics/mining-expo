@@ -126,6 +126,15 @@ ion-card-content {
   justify-content: flex-start;
   flex-wrap: wrap;
 }
+
+.panelist-label-container {
+  display: flex;
+  gap: 16px;
+  align-items: center;
+  justify-content: flex-start;
+  align-items: flex-start;
+  flex-direction: column;
+}
 .speaker-label {
   font-weight: 600;
 }

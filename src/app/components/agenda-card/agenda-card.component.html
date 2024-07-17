@@ -14,9 +14,9 @@
   <ion-card-content>{{ formatTalkTime(agenda) }}</ion-card-content>
 </ion-card> -->
 
-<ion-accordion-group>
+<ion-accordion-group [multiple]="true" value="open">
   
-    <ion-accordion value="first" [toggleIcon]="shouldToggleIcon()"  [readonly]="shouldToggleReadOnly()">
+    <ion-accordion [attr.value]="schedule.description ? 'open' : 'closed'" [toggleIcon]="shouldToggleIcon()"  [readonly]="shouldToggleReadOnly()">
       <ion-item class="ion" slot="header" >
         <div class="flex">
           <ion-label class="name">
@@ -63,7 +63,7 @@
           </div>
         </div>
       </div>
-      <div class="label-container" *ngIf="schedule.panelists">
+      <div class="panelist-label-container" *ngIf="schedule.panelists">
         <p class="speaker-label">Panelists:</p>
         <div class="speaker-container" *ngFor="let speaker of schedule.panelists">
           <img [src]="speaker.speakerProfilePicture" width="50" height="50" [alt]="speaker.speakerName"/>

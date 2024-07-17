@@ -35,7 +35,7 @@ export class AgendaCardComponent implements OnInit {
   //To enable or disable opening the accordion
   //Should be disabled if there is no description or speakers to showcase
   shouldToggleReadOnly(): boolean {
-    if(!this.schedule.description){
+    if(!this.schedule.description || this.schedule.description === null){
       return true;
     } else { return false;}
   }
