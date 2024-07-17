@@ -42,6 +42,7 @@ export class Tab1Page implements OnInit {
   setSelectedDay(day: number) {
     this.selectedDay = day;
     this.setDaySchedule(day);
+    console.log("day is: " + day)
   }
 
   setDaySchedule(day: number) {
