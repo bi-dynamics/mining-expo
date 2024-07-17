@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { Firestore, collection, collectionData, doc, docData, addDoc, Timestamp } from '@angular/fire/firestore';
+import { Firestore, collection, collectionData, query, orderBy, doc, docData, addDoc, Timestamp } from '@angular/fire/firestore';
 
 export interface Scan {
   id?: string;
@@ -17,7 +17,10 @@ export class DataService {
 
     getConferenceSchedule() {
       const confScheduleRef = collection(this.firestore, 'conference_schedule');
-      return collectionData(confScheduleRef);
+      // Create a query to order by timeStart (ascending order)
+  const sortedScheduleQuery = query(confScheduleRef, orderBy('timeStart'));
+
+      return collectionData(sortedScheduleQuery);
     }
     getExpoSchedule() {
       const expoScheduleRef = collection(this.firestore, 'expo_schedule');
