@@ -5,12 +5,7 @@
     </ion-buttons>
     <ion-title color="light">Floor Plans</ion-title>
   </ion-toolbar>
-  <ion-segment
-  color="light"
-    [scrollable]="true"
-    (ionChange)="segmentChanged($event)"
-    value="overview"
-  >
+  <ion-segment color="light" [scrollable]="true" (ionChange)="segmentChanged($event)" value="overview">
     <ion-segment-button value="venue overview">Overview Map </ion-segment-button>
     <ion-segment-button value="camelthorn balcony">
       Camelthorn Balcony
@@ -23,174 +18,39 @@
   </ion-segment>
 </ion-header>
 
-<ion-content>
-  <ion-list
-  *ngFor="let floorplan of filteredFloorPlans "
-    class="animate__animated animate__slideInUp animate__fast"
-  >
-    <swiper-container
-      [modules]="swiperModules"
-      zoom="true"
-      centeredSlides
-      style="height: 100%;"
-    >
+<ion-content class="ion-padding-vertical" [fullscreen]="true" *ngFor="let floorplan of filteredFloorPlans">
+
+  <div *ngIf="floorplan.irl_image" class="venue-container ion-padding">
+    <h2 class="ion-padding" style="font-weight: bold;">Venue</h2>
+    <img src={{floorplan.irl_image}} class="venue-image" alt={{floorplan.alt}} id="overview-map" />
+  </div>
+
+  <ion-list class="animate__animated animate__slideInUp animate__fast ion-padding">
+    <swiper-container [modules]="swiperModules" zoom="true" centeredSlides style="height: 100%;">
       <swiper-slide class="floor-plan-container">
+        <h2 style="font-weight: bold;">Floor Plan</h2>
         <div class="swiper-zoom-container">
-          <img
-            src={{floorplan.image}}
-            class="floor-plan-image"
-            alt={{floorplan.alt}}
-            id="overview-map"
-          />
-        </div>
-      </swiper-slide>
-    </swiper-container>
-  </ion-list>
-  <!-- <ion-list
-    class="animate__animated animate__slideInUp animate__fast"
-    *ngIf="segment === 'list'"
-  >
-    <swiper-container
-      [modules]="swiperModules"
-      zoom="true"
-      centeredSlides
-      style="height: 100%;"
-    >
-      <swiper-slide class="floor-plan-container">
-        <div class="swiper-zoom-container">
-          <img
-            [src]="'https://firebasestorage.googleapis.com/v0/b/mining-expo-bc804.appspot.com/o/img%2Ffloor_plans%2FOverview-map.webp?alt=media&token=fca23f9e-c756-4e8c-b824-5af19b02ea04'"
-            class="floor-plan-image"
-            id="overview-map"
-          />
-        </div>
-      </swiper-slide>
-    </swiper-container>
-  </ion-list>
-  <ion-list
-    class="animate__animated animate__slideInUp animate__fast"
-    *ngIf="segment === 'balcony'"
-  >
-    <swiper-container [modules]="swiperModules" zoom="true" centeredSlides
-    style="height: 100%;">
-      <swiper-slide class="floor-plan-container">
-        <div class="swiper-zoom-container">
-          <img
-            [src]="'https://firebasestorage.googleapis.com/v0/b/mining-expo-bc804.appspot.com/o/img%2Ffloor_plans%2FCamelthorn-balcony.webp?alt=media&token=a058d6d9-0727-4a78-b929-d1b773f63daf'"
-            class="floor-plan-image"
-          />
+          <img src={{floorplan.image}} class="floor-plan-image" alt={{floorplan.alt}} id="overview-map" />
         </div>
       </swiper-slide>
     </swiper-container>
   </ion-list>
 
-  <ion-list
-    class="animate__animated animate__slideInUp animate__fast"
-    *ngIf="segment === 'camelthorn'"
-  >
-    <swiper-container
-      [modules]="swiperModules"
-      zoom="true"
-      [centeredSlides]="true"
-      centeredSlides
-      style="height: 100%;"
-    >
-      <swiper-slide class="floor-plan-container">
-        <div class="swiper-zoom-container">
-          <img
-            [src]="'https://firebasestorage.googleapis.com/v0/b/mining-expo-bc804.appspot.com/o/img%2Ffloor_plans%2FCamelthorn.webp?alt=media&token=5bd00fa8-02aa-42a3-8066-1a3098016ee6'"
-            class="floor-plan-image"
-          />
-        </div>
-      </swiper-slide>
-    </swiper-container>
-  </ion-list>
-
-  <ion-list
-    class="animate__animated animate__slideInUp animate__fast"
-    *ngIf="segment === 'galpini'"
-  >
-    <swiper-container
-      [modules]="swiperModules"
-      zoom="true"
-      [centeredSlides]="true"
-      centeredSlides
-      style="height: 100%;"
-    >
-      <swiper-slide class="floor-plan-container">
-        <div class="swiper-zoom-container">
-          <img
-            [src]="'https://firebasestorage.googleapis.com/v0/b/mining-expo-bc804.appspot.com/o/img%2Ffloor_plans%2FGalpini.webp?alt=media&token=7e210ed4-b7ee-4b55-be52-56ed6a9e6013'"
-            class="floor-plan-image"
-          />
-        </div>
-      </swiper-slide>
-    </swiper-container>
-  </ion-list>
-
-  <ion-list
-    class="animate__animated animate__slideInUp animate__fast"
-    *ngIf="segment === 'baobab'"
-  >
-    <swiper-container
-      [modules]="swiperModules"
-      zoom="true"
-      [centeredSlides]="true"
-      centeredSlides
-      style="height: 100%;"
-    >
-      <swiper-slide class="floor-plan-container">
-        <div class="swiper-zoom-container">
-          <img
-            [src]="'https://firebasestorage.googleapis.com/v0/b/mining-expo-bc804.appspot.com/o/img%2Ffloor_plans%2FBoabab.webp?alt=media&token=93d7be03-b71b-43f7-b14c-0ca9b6e30365'"
-            class="floor-plan-image"
-          />
-        </div>
-      </swiper-slide>
-    </swiper-container>
-  </ion-list>
-
-  <ion-list
-    class="animate__animated animate__slideInUp animate__fast"
-    *ngIf="segment === 'mopane'"
-  >
-    <swiper-container
-      [modules]="swiperModules"
-      zoom="true"
-      [centeredSlides]="true"
-      centeredSlides
-      style="height: 100%;"
-    >
-      <swiper-slide class="floor-plan-container">
-        <div class="swiper-zoom-container">
-          <img
-            [src]="'https://firebasestorage.googleapis.com/v0/b/mining-expo-bc804.appspot.com/o/img%2Ffloor_plans%2FMopane-hall.webp?alt=media&token=4531d0e4-1359-4c51-b7c2-7c2b4dd8df1e'"
-            class="floor-plan-image"
-          />
-        </div>
-      </swiper-slide>
-    </swiper-container>
-  </ion-list>
-
-  <ion-list
-    class="animate__animated animate__slideInUp animate__fast"
-    *ngIf="segment === 'maerua'"
-  >
-    <swiper-container
-      [modules]="swiperModules"
-      zoom="true"
-      [centeredSlides]="true"
-      centeredSlides
-      style="height: 100%;"
-    >
-      <swiper-slide class="floor-plan-container">
-        <div class="swiper-zoom-container">
-          <img
-            [src]="'https://firebasestorage.googleapis.com/v0/b/mining-expo-bc804.appspot.com/o/img%2Ffloor_plans%2FMarua-hall.webp?alt=media&token=434bd911-f805-4fa8-b102-4e72e1a6f849'"
-            class="floor-plan-image"
-          />
-        </div>
-      </swiper-slide>
-    </swiper-container>
-  </ion-list> -->
+  <div class="exhibitor-container ion-padding-vertical" *ngIf="floorplan.exhibitors">
+      <h2 class="ion-padding" style="font-weight: bold;">Exhibitors of {{floorplan.alt}}</h2>
+   
+      <swiper-container [modules]="swiperModules" style="height: 100%; margin: 0 auto; width: 100%;" [spaceBetween]="2" [slidesPerView]="1.5" [loop]="true" [centeredSlides]="true" [pagination]="{clickable: true, dynamicBullets: true}">
+        <swiper-slide class="exhibitor" *ngFor="let exhibitor of floorplan.exhibitors">
+              <ion-card >
+                <img alt={{exhibitor.name}} src={{exhibitor.image}} class="ion-padding" />
+              <ion-card-header>
+                <ion-card-title>{{exhibitor.name}}</ion-card-title>
+                <ion-card-subtitle>Stand No. {{exhibitor.standNumber}}</ion-card-subtitle>
+              </ion-card-header>
+            </ion-card>
+        </swiper-slide>
+     </swiper-container>
+    
+    </div>
+  <div class="ion-padding"></div>
 </ion-content>

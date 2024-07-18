@@ -1,18 +1,38 @@
 ion-list{
-  height: 100%;
+  height: fit-content;
 }
-.floor-plan-container {
+
+.venue-container{
   display: flex;
+  flex-direction: column;
   justify-content: center;
   align-items: center;
-  height: 100%; /* Set the height to occupy the entire viewport */
+  height: 50%; /* Set the height to occupy the entire viewport */
+width: 100%;  
+}
+
+.venue-image{
+  height: fit-content;
+  width: 100%;
+  max-width: 100%; /* Make the image responsive and fit the container */
+  max-height: 40vh; /* Limit the image height to 80% of the viewport height */
+  border-radius: 10px; /* Add rounded corners for aesthetics */
+  object-fit: contain;
+}
+
+.floor-plan-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 80vh; /* Set the height to occupy the entire viewport */
 width: 100%;  
 }
 
 .floor-plan-image {
   max-width: 100%; /* Make the image responsive and fit the container */
   max-height: 80vh; /* Limit the image height to 80% of the viewport height */
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Add a subtle shadow for aesthetics */
+  // box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Add a subtle shadow for aesthetics */
   border-radius: 10px; /* Add rounded corners for aesthetics */
 }
 
@@ -21,13 +41,32 @@ width: 100%;
   justify-content: center;
   align-items: center;
   width: 100%;
-  height: 100%;
+  height: 80vh;
 }
 
 #overview-map {
   max-height: 75dvh;
   margin-left: 1rem;
   margin-right: 1rem;
+}
+
+.exhibitor-container{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: fit-content;
+}
+
+.exhibitor{
+  display: flex;
+  position: relative;
+  flex-direction: column;
+  flex-shrink: 0;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: 100%;
 }
 
 ion-segment-button::part(indicator-background) {
