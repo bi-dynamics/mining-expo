@@ -45,7 +45,7 @@ export class SchedulePage implements OnInit {
   ) {
     this.dataService.getConferenceSchedule().subscribe( data => { 
       this.expoSchedule = data as ScheduleItem[]
-      this.sortScheduleByStartTime();
+      // this.sortScheduleByStartTime();
       
   });
    }
@@ -58,6 +58,8 @@ export class SchedulePage implements OnInit {
 
   sortScheduleByStartTime() {
     this.expoSchedule.sort((a: any, b: any) => a.timeStart - b.timeStart);
+//     this.expoSchedule.sort((a: any, b: any) => <any>(a.timeStart.seconds) - <any>(b.timeStart.seconds));
+// console.log(this.expoSchedule)
   }
 
   setSelectedDay(day: number) {
