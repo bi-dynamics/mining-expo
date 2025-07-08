@@ -16,8 +16,12 @@
     <ion-card-header>
       <ion-card-title>Register as a Conference Delegate</ion-card-title>  
     </ion-card-header>
-    <ion-card-content>
-Online registrations closed. Physical registrations still possible at conference venue. Entry is free of charge.
+    <ion-card-content *ngIf="scheduleOpen">
+      <iframe src="https://www.cognitoforms.com/f/2QVll_rxDEOR3mB1yLnroQ/8" allow="payment" style="border:0;width:100%;" height="632"></iframe>
+<script src="https://www.cognitoforms.com/f/iframe.js"></script>
+    </ion-card-content>  
+    <ion-card-content *ngIf="!scheduleOpen">
+      The conference registration is currently closed. Please check back later.
     </ion-card-content>    
   </ion-card>
 

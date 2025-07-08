@@ -10,15 +10,27 @@
 </ion-header>
 
  <ion-content class="page-content" [fullscreen]="true">
+  <div *ngIf="!scheduleOpen" class="ion-padding">
+    <ion-card color="danger">
+      <ion-card-header>
+        <ion-card-title>Conference Schedule Closed</ion-card-title>
+      </ion-card-header>
+      <ion-card-content>
+        The conference schedule is currently closed. Please check back later.
+      </ion-card-content>
+    </ion-card>
+  </div>
 
-  <ion-item-divider sticky color="light">
-    <ion-toolbar>
+  <ng-container *ngIf="scheduleOpen">
+
+    <ion-item-divider sticky color="light">
+      <ion-toolbar>
         <ion-segment value="days" color="light">
-          <ion-segment-button value="day1" (click)="setSelectedDay(7)" >
-            <ion-label class="button" ><div>Day 1</div><div>August 07</div></ion-label>
+          <ion-segment-button value="day1" (click)="setSelectedDay(6)" >
+            <ion-label class="button" ><div>Day 1</div><div>August 06</div></ion-label>
           </ion-segment-button>
-          <ion-segment-button value="day2" (click)="setSelectedDay(8)">
-            <ion-label class="button" ><div>Day 2</div><div>August 08</div></ion-label>
+          <ion-segment-button value="day2" (click)="setSelectedDay(7)">
+            <ion-label class="button" ><div>Day 2</div><div>August 07</div></ion-label>
           </ion-segment-button>
         </ion-segment>
       </ion-toolbar>
@@ -27,20 +39,20 @@
     <ion-card>
       <img alt="Mining Expo Theme" src="https://firebasestorage.googleapis.com/v0/b/mining-expo-bc804.appspot.com/o/img%2Fwebsite_media%2Fmining-expo-header_resize.webp?alt=media&token=f4d445cb-7b1b-43d2-9b57-4736ee85c73b" />
       <ion-card-header>
-        <ion-card-title>Mining Conference 2024 Theme</ion-card-title>  
+        <ion-card-title>Mining Conference 2025 Theme</ion-card-title>  
       </ion-card-header>
       <ion-card-content>
-        The Theme for this year's event is “Green Shoots for Namibia's Mining Industry: a Season of Opportunity and Growth to Drive Economic Expansion”
+        Mining for Namibia's Future: Job Creation, Local Empowerment, and Economic Transformation
       </ion-card-content>
     </ion-card>
-
-  <div class="ion-padding" *ngIf="selectedDay === 0">
-    <app-agenda-card
+    
+    <div class="ion-padding" *ngIf="selectedDay === 0">
+      <app-agenda-card
       *ngFor="let schedule of conferenceSchedule"
       [schedule]="schedule"
     ></app-agenda-card>
   </div>
-
+  
   <div class="ion-padding" *ngIf="selectedDay !== 0">
     <app-agenda-card
     *ngFor="let schedule of daySchedule"
@@ -48,8 +60,7 @@
     ></app-agenda-card>
   </div>
   
-
-
   <div class="ion-padding"></div>
-
+  
+</ng-container>
 </ion-content>
