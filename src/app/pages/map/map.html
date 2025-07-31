@@ -18,39 +18,67 @@
   </ion-segment>
 </ion-header>
 
-<ion-content class="ion-padding-vertical" [fullscreen]="true" *ngFor="let floorplan of filteredFloorPlans">
 
-  <div *ngIf="floorplan.irl_image" class="venue-container ion-padding">
-    <h2 class="ion-padding" style="font-weight: bold;">Venue</h2>
-    <img src={{floorplan.irl_image}} class="venue-image" alt={{floorplan.alt}} id="overview-map" />
-  </div>
+<ion-content class="ion-padding-vertical" [fullscreen]="true" >
+  <div *ngIf="!floorPlansOpen" class="ion-padding">
+      <ion-card color="warning">
+        <ion-card-header>
+          <ion-card-title>Floor Plans Closed</ion-card-title>
+        </ion-card-header>
+        <ion-card-content>
+          The floor plans are currently closed. Please check back later.
+        </ion-card-content>
+      </ion-card>
+    </div>
 
-  <ion-list class="animate__animated animate__slideInUp animate__fast ion-padding">
-    <swiper-container [modules]="swiperModules" zoom="true" centeredSlides style="height: 100%;">
-      <swiper-slide class="floor-plan-container">
-        <h2 style="font-weight: bold;">Floor Plan</h2>
-        <div class="swiper-zoom-container">
-          <img src={{floorplan.image}} class="floor-plan-image" alt={{floorplan.alt}} id="overview-map" />
-        </div>
-      </swiper-slide>
-    </swiper-container>
-  </ion-list>
+
+  <ng-container *ngIf="floorPlansOpen">
+
+    <div *ngFor="let floorplan of filteredFloorPlans">
+
+      
+      <div *ngIf="floorplan.irl_image" class="venue-container ion-padding">
+        <h2 class="ion-padding" style="font-weight: bold;">Venue</h2>
+        <img src={{floorplan.irl_image}} class="venue-image" alt={{floorplan.alt}} id="overview-map" />
+      </div>
+      
+      <ion-list
+      class="animate__animated animate__slideInUp animate__fast ion-padding"
+    >
+      <swiper-container [modules]="swiperModules" zoom="true" centeredSlides style="height: 100%;">
+        <swiper-slide class="floor-plan-container">
+          <h2 style="font-weight: bold;">Floor Plan</h2>
+          <div class="swiper-zoom-container">
+            <img
+  *ngIf="floorplan.activeFloorPlanSrc"
+  src="{{ floorplan.activeFloorPlanSrc }}"
+  class="floor-plan-image"
+  alt="{{ floorplan.alt }}"
+  id="overview-map"
+/>
+</div>
+</swiper-slide>
+</swiper-container>
+    </ion-list>
+
 
   <div class="exhibitor-container ion-padding-vertical" *ngIf="floorplan.exhibitors">
       <h2 class="ion-padding" style="font-weight: bold;">Exhibitors of {{floorplan.alt}}</h2>
    
       <swiper-container [modules]="swiperModules" style="height: 100%; margin: 0 auto; width: 100%;" [spaceBetween]="2" [slidesPerView]="1.5" [loop]="true" [centeredSlides]="true" [pagination]="{clickable: true, dynamicBullets: true}">
         <swiper-slide class="exhibitor" *ngFor="let exhibitor of floorplan.exhibitors">
-              <ion-card >
+          <ion-card >
                 <img alt={{exhibitor.name}} src={{exhibitor.image}} class="ion-padding" />
               <ion-card-header>
                 <ion-card-title>{{exhibitor.name}}</ion-card-title>
                 <ion-card-subtitle>Stand No. {{exhibitor.standNumber}}</ion-card-subtitle>
               </ion-card-header>
             </ion-card>
-        </swiper-slide>
-     </swiper-container>
-    
+          </swiper-slide>
+        </swiper-container>
+        
+      </div>
+      <div class="ion-padding"></div>
     </div>
-  <div class="ion-padding"></div>
+    </ng-container>
 </ion-content>

@@ -1,34 +1,45 @@
-import { Component } from '@angular/core';
-import { Router } from '@angular/router';
+import { Component } from "@angular/core";
+import { Router } from "@angular/router";
 
-import { MenuController } from '@ionic/angular';
+import { MenuController } from "@ionic/angular";
 
-import { Storage } from '@ionic/storage-angular';
+import { Storage } from "@ionic/storage-angular";
+import { DataService } from "../../services/data.service";
 
 @Component({
-  selector: 'page-tutorial',
-  templateUrl: 'tutorial.html',
-  styleUrls: ['./tutorial.scss'],
+  selector: "page-tutorial",
+  templateUrl: "tutorial.html",
+  styleUrls: ["./tutorial.scss"],
 })
 export class TutorialPage {
-  showSkip = true;
+  // Fallback the logo and sponsor images
+  ComLogoSrc = "/assets/img/com-logo.png";
 
+  SponsorsLogosSrc = ["/assets/imgs/rmbLogo.png"];
+  ExpoLogoSrc = "/assets/imgs/expo-logo-25.png";
   constructor(
     public menu: MenuController,
     public router: Router,
     public storage: Storage,
-  ) {}
+    public dataService: DataService
+  ) {
+    this.dataService.getPageConfig("WelcomePage").subscribe((config) => {
+      this.ComLogoSrc = config.ComLogoSrc || this.ComLogoSrc;
+      this.SponsorsLogosSrc = config.SponsorsLogosSrc || this.SponsorsLogosSrc;
+      this.ExpoLogoSrc = config.ExpoLogoSrc || this.ExpoLogoSrc;
+    });
+  }
 
   startApp() {
     this.router
-      .navigateByUrl('/app/tabs/schedule', { replaceUrl: true })
-      .then(() => this.storage.set('ion_did_tutorial', true));
+      .navigateByUrl("/app/tabs/schedule", { replaceUrl: true })
+      .then(() => this.storage.set("ion_did_tutorial", true));
   }
 
   ionViewWillEnter() {
-    this.storage.get('ion_did_tutorial').then(res => {
+    this.storage.get("ion_did_tutorial").then((res) => {
       if (res === true) {
-        this.router.navigateByUrl('/app/tabs/schedule', { replaceUrl: true });
+        this.router.navigateByUrl("/app/tabs/schedule", { replaceUrl: true });
       }
     });
 

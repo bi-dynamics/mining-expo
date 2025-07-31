@@ -11,7 +11,7 @@
 
 <ion-content class="page-content" fullscreen="true">
   <div *ngIf="!scheduleOpen" class="ion-padding">
-    <ion-card color="danger">
+    <ion-card color="warning">
       <ion-card-header>
         <ion-card-title>Schedule Closed</ion-card-title>
       </ion-card-header>
@@ -25,19 +25,21 @@
 
     <ion-item-divider sticky color="light">
       <ion-toolbar>
-        <ion-segment value="days" color="light">
-          <ion-segment-button class="button-wrapper" value="day1" (click)="setSelectedDay(6)" >
-            <ion-label class="button" color="expoBlue" ><div>Day 1</div><div>August 06</div></ion-label>
-        </ion-segment-button>
-        <ion-segment-button class="button-wrapper" value="day2" (click)="setSelectedDay(7)">
-          <ion-label class="button" ><div>Day 2</div><div>August 07</div></ion-label>
-        </ion-segment-button>
-      </ion-segment>
-    </ion-toolbar>
-  </ion-item-divider>
+        <ion-segment [value]="selectedDay" color="light">
+          <ion-segment-button
+            *ngFor="let day of days"
+            [value]="day.value"
+            (click)="setSelectedDay(day.value)">
+            <ion-label class="button">
+              <div>{{ day.label }}</div>
+            </ion-label>
+          </ion-segment-button>
+        </ion-segment>
+      </ion-toolbar>
+    </ion-item-divider>
   
   <ion-card>
-    <img alt="Mining Expo Theme" style="object-fit: cover; width: 100%; height: 100%; padding: 4px 4px 4px 4px; border-radius: 8px;" src="https://firebasestorage.googleapis.com/v0/b/mining-expo-bc804.appspot.com/o/img%2Fwebsite_media%2Fmining-expo-gallery-2_resize.webp?alt=media&token=9078be81-f428-4bd6-9a5f-406510bc84a6" />
+    <img alt="Mining Expo Theme" style="object-fit: cover; width: 100%; height: 100%; padding: 4px 4px 4px 4px; border-radius: 8px;" src={{bannerImage}} />
   </ion-card>
   
   <div class="ion-padding" *ngIf="selectedDay === 0">

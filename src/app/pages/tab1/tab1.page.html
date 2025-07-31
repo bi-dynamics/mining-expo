@@ -11,12 +11,12 @@
 
  <ion-content class="page-content" [fullscreen]="true">
   <div *ngIf="!scheduleOpen" class="ion-padding">
-    <ion-card color="danger">
+    <ion-card color="warning">
       <ion-card-header>
         <ion-card-title>Conference Schedule Closed</ion-card-title>
       </ion-card-header>
       <ion-card-content>
-        The conference schedule is currently closed. Please check back later.
+        The conference schedule is currently closed.
       </ion-card-content>
     </ion-card>
   </div>
@@ -25,24 +25,26 @@
 
     <ion-item-divider sticky color="light">
       <ion-toolbar>
-        <ion-segment value="days" color="light">
-          <ion-segment-button value="day1" (click)="setSelectedDay(6)" >
-            <ion-label class="button" ><div>Day 1</div><div>August 06</div></ion-label>
-          </ion-segment-button>
-          <ion-segment-button value="day2" (click)="setSelectedDay(7)">
-            <ion-label class="button" ><div>Day 2</div><div>August 07</div></ion-label>
+        <ion-segment [value]="selectedDay" color="light">
+          <ion-segment-button
+            *ngFor="let day of days"
+            [value]="day.value"
+            (click)="setSelectedDay(day.value)">
+            <ion-label class="button">
+              <div>{{ day.label }}</div>
+            </ion-label>
           </ion-segment-button>
         </ion-segment>
       </ion-toolbar>
     </ion-item-divider>
 
     <ion-card>
-      <img alt="Mining Expo Theme" src="https://firebasestorage.googleapis.com/v0/b/mining-expo-bc804.appspot.com/o/img%2Fwebsite_media%2Fmining-expo-header_resize.webp?alt=media&token=f4d445cb-7b1b-43d2-9b57-4736ee85c73b" />
+      <img alt="Mining Expo Theme" src="{{ bannerImage }}" />
       <ion-card-header>
-        <ion-card-title>Mining Conference 2025 Theme</ion-card-title>  
+        <ion-card-title>{{ pageTitle }}</ion-card-title>
       </ion-card-header>
       <ion-card-content>
-        Mining for Namibia's Future: Job Creation, Local Empowerment, and Economic Transformation
+        {{ pageDescription }}
       </ion-card-content>
     </ion-card>
     

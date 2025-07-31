@@ -2,6 +2,8 @@ import { Component } from "@angular/core";
 import { NgForm } from "@angular/forms";
 import { HttpClient } from "@angular/common/http";
 import { AlertController, ToastController } from "@ionic/angular";
+import { DataService } from "../../services/data.service";
+import { DomSanitizer } from "@angular/platform-browser";
 // import { DataService } from '../../services/data.service';
 
 @Component({
@@ -11,14 +13,25 @@ import { AlertController, ToastController } from "@ionic/angular";
 })
 export class RegisterPage {
   scheduleOpen: boolean = true;
-
-  constructor(private http: HttpClient) {}
+  formSrc: string = "https://www.cognitoforms.com/f/2QVll_rxDEOR3mB1yLnroQ/8";
+  safeFormSrc: any;
+  constructor(
+    private http: HttpClient,
+    private dataService: DataService,
+    private sanitizer: DomSanitizer
+  ) {
+    this.dataService
+      .getPageConfig("ConferenceRegistration")
+      .subscribe((config) => {
+        this.safeFormSrc = this.sanitizer.bypassSecurityTrustResourceUrl(
+          config.registrationFormSrc || this.formSrc
+        );
+      });
+  }
 
   ngOnInit() {
     this.http
-      .get<{ conferenceRegistrationOpen: boolean }>(
-        "assets/schedule-config.json"
-      )
+      .get<{ conferenceRegistrationOpen: boolean }>("assets/pages-config.json")
       .subscribe((config) => {
         this.scheduleOpen = config.conferenceRegistrationOpen;
       });

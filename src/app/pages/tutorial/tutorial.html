@@ -4,12 +4,12 @@
 
 <ion-content>
   <div class="image header-images">
-    <img class="header-image" src="/assets/img/miningexpologo.png" alt="welcome">
-    <ion-img class="header-image" src="/assets/img/rmbLogo.png" alt="rmblogo">
+    <img class="header-image" [src]="ComLogoSrc" alt="welcome">
+    <ion-img class="header-image" *ngFor="let sponsorSrc of SponsorsLogosSrc" [src]="sponsorSrc" alt="Sponsor Logo">
     </ion-img>
   </div>
   <div class="image">
-    <img src="/assets/img/expo-logo-25.png" alt="welcome">
+    <img [src]="ExpoLogoSrc" alt="Mining Expo & Conference Logo">
   </div>
   <div class="heading">
     <h2>Welcome to the Mining Expo & Conference App</h2>
