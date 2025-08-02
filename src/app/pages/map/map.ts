@@ -9,9 +9,10 @@ import { ConferenceData } from "../../providers/conference-data";
 import { Platform } from "@ionic/angular";
 import { DOCUMENT } from "@angular/common";
 import { darkStyle } from "./map-dark-style";
-import { IonicSlides } from "@ionic/angular"; //Import Ionic slides module for Swiper package
+import { IonicSlides } from "@ionic/angular";
 import { DataService } from "../../services/data.service";
 import { HttpClient } from "@angular/common/http";
+import { set } from "cypress/types/lodash";
 
 interface FloorPlanSourceYear {
   year: number;
@@ -22,9 +23,9 @@ interface FloorPlan {
   alt: string;
   id: string;
   sourceYears?: FloorPlanSourceYear[];
-  irl_image?: string; // Assuming irl_image is optional
-  exhibitors?: any[]; // Adjust this type as per your exhibitor structure
-  activeFloorPlanSrc?: string; // New property to store the active floor plan source
+  irl_image?: string;
+  exhibitors?: any[];
+  activeFloorPlanSrc?: string;
 }
 
 @Component({
@@ -40,8 +41,9 @@ export class MapPage implements AfterViewInit {
   public floorPlans: any = [];
   public filteredFloorPlans: any = [];
   floorPlansOpen: boolean = true;
+  public mapLoaded: boolean = false;
 
-  swiperModules = [IonicSlides]; // Install Swiper modules
+  swiperModules = [IonicSlides];
 
   constructor(
     @Inject(DOCUMENT) private doc: Document,
@@ -50,9 +52,6 @@ export class MapPage implements AfterViewInit {
     public dataService: DataService,
     private http: HttpClient
   ) {
-    // Moved the subscription and data processing inside the constructor
-    // This is generally acceptable for data loading that's immediately needed.
-    // However, for more complex scenarios, ngOnInit is often preferred.
     this.dataService.getFloorPlans().subscribe((data: FloorPlan[]) => {
       // Process data to determine activeFloorPlanSrc for each plan
       this.floorPlans = data.map((plan) => {
@@ -89,14 +88,10 @@ export class MapPage implements AfterViewInit {
         };
       });
 
-      // Now filter the floor plans based on your segment and also ensure they have an active source
-      this.applyFilter(); // Call a dedicated method for filtering
-
-      console.log("Floor Plans (after data arrives):", this.floorPlans);
-      console.log(
-        "Filtered Floor Plans (after data arrives):",
-        this.filteredFloorPlans
-      );
+      this.applyFilter();
+      setTimeout(() => {
+        this.mapLoaded = true;
+      }, 1000);
     });
   }
 
@@ -116,8 +111,12 @@ export class MapPage implements AfterViewInit {
     }
   }
   segmentChanged(ev: any) {
+    this.mapLoaded = false;
     this.segment = ev.detail.value;
-    this.applyFilter(); // Re-apply filter when segment changes
+    this.applyFilter();
+    setTimeout(() => {
+      this.mapLoaded = true;
+    }, 500); // Delay to ensure the map is loaded after segment change
   }
 
   private applyFilter() {

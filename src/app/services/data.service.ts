@@ -36,9 +36,14 @@ export class DataService {
     return collectionData(expoScheduleRef);
   }
 
+  //get only with status of 'active' speakers
   getSpeakers() {
     const speakersRef = collection(this.firestore, "speakers");
-    return collectionData(speakersRef);
+    const activeSpeakersQuery = query(
+      speakersRef,
+      where("status", "==", "active")
+    );
+    return collectionData(activeSpeakersQuery);
   }
 
   getExhibitors() {

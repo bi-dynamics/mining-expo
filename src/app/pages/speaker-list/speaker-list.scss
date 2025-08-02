@@ -4,6 +4,17 @@
   flex-direction: column;
 }
 
+.speaker-card-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+
+  ion-spinner {
+    display: absolute;
+  }
+}
+
 /* Due to the fact the cards are inside of columns the margins don't overlap
  * properly so we want to remove the extra margin between cards
  */

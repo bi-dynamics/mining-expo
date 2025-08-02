@@ -14,9 +14,10 @@ import { DataService } from "../../services/data.service";
 export class TutorialPage {
   // Fallback the logo and sponsor images
   ComLogoSrc = "/assets/img/com-logo.png";
+  public logosLoaded: boolean[] = [];
 
   SponsorsLogosSrc = ["/assets/imgs/rmbLogo.png"];
-  ExpoLogoSrc = "/assets/imgs/expo-logo-25.png";
+  ExpoLogoSrc = "/assets/img/expo-logo-25.png";
   constructor(
     public menu: MenuController,
     public router: Router,
@@ -28,6 +29,7 @@ export class TutorialPage {
       this.SponsorsLogosSrc = config.SponsorsLogosSrc || this.SponsorsLogosSrc;
       this.ExpoLogoSrc = config.ExpoLogoSrc || this.ExpoLogoSrc;
     });
+    this.logosLoaded = [false, false, true];
   }
 
   startApp() {

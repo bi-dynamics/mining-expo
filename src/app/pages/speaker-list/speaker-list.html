@@ -26,13 +26,21 @@
       </ion-card-content>
       
     </ion-card> -->
-    <app-speaker-card
-      *ngFor="let speaker of speakerList; trackBy: trackItems"
-      [button]="true"
-      [speaker]="speaker"
-    ></app-speaker-card>
+
+    <div
+      *ngFor="let speaker of speakerList; let i = index; trackBy: trackItems"
+      class="speaker-card-container"
+    >
+        <ion-spinner name="circular" color="primary" *ngIf="!speakersLoaded[i]" ></ion-spinner>
+      <app-speaker-card
+      *ngIf="speakersLoaded[i]"
+        [class.blur]="speakersLoaded[i]"
+        [button]="true"
+        [speaker]="speaker"
+        (load)="speakersLoaded[i] = true"
+      ></app-speaker-card>
+    </div>
   </div>
-  <div class="ion-padding">
-    
-  </div>
+   
+  
 </ion-content>

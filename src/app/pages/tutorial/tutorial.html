@@ -4,12 +4,17 @@
 
 <ion-content>
   <div class="image header-images">
-    <img class="header-image" [src]="ComLogoSrc" alt="welcome">
-    <ion-img class="header-image" *ngFor="let sponsorSrc of SponsorsLogosSrc" [src]="sponsorSrc" alt="Sponsor Logo">
-    </ion-img>
+    <img class="header-image" (load)="logosLoaded[0] = true" [src]="ComLogoSrc" alt="welcome">
+    <ion-spinner name="circular" color="primary" *ngIf="!logosLoaded[0]"></ion-spinner>
+    <div *ngIf="logosLoaded[0]">
+
+      <ion-img class="header-image" (load)="logosLoaded[1] = true" *ngFor="let sponsorSrc of SponsorsLogosSrc" [src]="sponsorSrc" alt="Sponsor Logo">
+      </ion-img>
+    </div>
   </div>
   <div class="image">
-    <img [src]="ExpoLogoSrc" alt="Mining Expo & Conference Logo">
+    <ion-spinner name="circular" color="primary" *ngIf="!logosLoaded[2]"></ion-spinner>
+    <img *ngIf="logosLoaded[2]" (load)="logosLoaded[2] = true" [src]="ExpoLogoSrc" alt="Mining Expo & Conference Logo">
   </div>
   <div class="heading">
     <h2>Welcome to the Mining Expo & Conference App</h2>

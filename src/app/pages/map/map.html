@@ -39,7 +39,8 @@
       
       <div *ngIf="floorplan.irl_image" class="venue-container ion-padding">
         <h2 class="ion-padding" style="font-weight: bold;">Venue</h2>
-        <img src={{floorplan.irl_image}} class="venue-image" alt={{floorplan.alt}} id="overview-map" />
+        <ion-spinner name="circular" color="primary" *ngIf="!mapLoaded"></ion-spinner>
+        <img *ngIf="mapLoaded"  src={{floorplan.irl_image}} class="venue-image" alt={{floorplan.alt}} id="overview-map" />
       </div>
       
       <ion-list
@@ -49,8 +50,11 @@
         <swiper-slide class="floor-plan-container">
           <h2 style="font-weight: bold;">Floor Plan</h2>
           <div class="swiper-zoom-container">
+                    <ion-spinner name="circular" color="primary" *ngIf="!mapLoaded"></ion-spinner>
+
             <img
-  *ngIf="floorplan.activeFloorPlanSrc"
+
+  *ngIf="floorplan.activeFloorPlanSrc && mapLoaded"
   src="{{ floorplan.activeFloorPlanSrc }}"
   class="floor-plan-image"
   alt="{{ floorplan.alt }}"
