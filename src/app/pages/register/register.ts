@@ -13,7 +13,6 @@ import { DomSanitizer } from "@angular/platform-browser";
 })
 export class RegisterPage {
   scheduleOpen: boolean = true;
-  formSrc: string = "https://www.cognitoforms.com/f/2QVll_rxDEOR3mB1yLnroQ/8";
   safeFormSrc: any;
   constructor(
     private http: HttpClient,
@@ -24,7 +23,7 @@ export class RegisterPage {
       .getPageConfig("ConferenceRegistration")
       .subscribe((config) => {
         this.safeFormSrc = this.sanitizer.bypassSecurityTrustResourceUrl(
-          config.registrationFormSrc || this.formSrc
+          config.registrationFormSrc
         );
       });
   }
