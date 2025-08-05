@@ -1,6 +1,6 @@
 {
       "mainScheduleOpen": true,
       "conferenceScheduleOpen": true,
-      "conferenceRegistrationOpen": true,
+      "conferenceRegistrationOpen": false,
       "floorPlansOpen": true
 }
