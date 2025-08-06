@@ -46,6 +46,7 @@ export class Tab1Page implements OnInit {
         this.pageTitle = config.pageTitle;
         this.pageDescription = config.pageDescription;
         this.bannerImage = config.bannerImage;
+        this.scheduleOpen = config.conferenceScheduleOpen;
       });
   }
 
@@ -80,13 +81,7 @@ export class Tab1Page implements OnInit {
     }
   }
 
-  ngOnInit() {
-    this.http
-      .get<{ conferenceScheduleOpen: boolean }>("assets/pages-config.json")
-      .subscribe((config) => {
-        this.scheduleOpen = config.conferenceScheduleOpen;
-      });
-  }
+  ngOnInit() {}
 
   setSelectedDay(day: number) {
     this.selectedDay = day;

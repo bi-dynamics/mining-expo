@@ -25,15 +25,12 @@ export class RegisterPage {
         this.safeFormSrc = this.sanitizer.bypassSecurityTrustResourceUrl(
           config.registrationFormSrc
         );
+        this.scheduleOpen = config.conferenceRegistrationOpen;
       });
   }
 
   ngOnInit() {
-    this.http
-      .get<{ conferenceRegistrationOpen: boolean }>("assets/pages-config.json")
-      .subscribe((config) => {
-        this.scheduleOpen = config.conferenceRegistrationOpen;
-      });
+    
   }
 
   //   registerDelegate() {

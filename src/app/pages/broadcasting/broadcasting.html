@@ -8,3 +8,37 @@
     </ion-title>
     </ion-toolbar>
 </ion-header>
+
+<ion-content class="page-content" fullscreen="true">
+  <div *ngIf="!broadcastingOpen" class="ion-padding">
+    <ion-card color="warning">
+      <ion-card-header>
+        <ion-card-title>Broadcasting Closed</ion-card-title>
+      </ion-card-header>
+      <ion-card-content>
+        Broadcasting is currently closed.
+      </ion-card-content>
+    </ion-card>
+  </div>
+
+  <ng-container *ngIf="broadcastingOpen" class="ion-padding ion-justify-content-center ion-align-items-center">
+    <ion-card>
+      <ion-card-header>
+        <ion-card-title>Live Broadcasting</ion-card-title>
+      </ion-card-header>
+      <ion-card-content>
+        <p>Watch the live broadcast of the Mining Expo here.</p>
+      </ion-card-content>
+    </ion-card>
+
+    
+      <iframe
+        [src]="broadcastSrc"
+        width="500"
+        height="500"
+        allow="autoplay; web-share"
+        allowFullScreen
+      ></iframe>
+   
+    <div class="ion-padding"></div>
+  </ng-container>

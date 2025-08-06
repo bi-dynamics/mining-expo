@@ -63,16 +63,11 @@ export class SchedulePage implements OnInit {
     });
     this.dataService.getPageConfig("MainEventProgram").subscribe((config) => {
       this.bannerImage = config.bannerImage;
+      this.scheduleOpen = config.mainScheduleOpen;
     });
   }
 
-  ngOnInit() {
-    this.http
-      .get<{ mainScheduleOpen: boolean }>("assets/pages-config.json")
-      .subscribe((config) => {
-        this.scheduleOpen = config.mainScheduleOpen;
-      });
-  }
+  ngOnInit() {}
 
   extractDays() {
     const daySet = new Set<number>();

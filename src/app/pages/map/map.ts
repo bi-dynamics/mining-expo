@@ -11,8 +11,6 @@ import { DOCUMENT } from "@angular/common";
 import { darkStyle } from "./map-dark-style";
 import { IonicSlides } from "@ionic/angular";
 import { DataService } from "../../services/data.service";
-import { HttpClient } from "@angular/common/http";
-import { set } from "cypress/types/lodash";
 
 interface FloorPlanSourceYear {
   year: number;
@@ -49,9 +47,11 @@ export class MapPage implements AfterViewInit {
     @Inject(DOCUMENT) private doc: Document,
     public confData: ConferenceData,
     public platform: Platform,
-    public dataService: DataService,
-    private http: HttpClient
+    public dataService: DataService
   ) {
+    this.dataService.getPageConfig("MainEventMap").subscribe((config) => {
+      this.floorPlansOpen = config.floorPlansOpen;
+    });
     this.dataService.getFloorPlans().subscribe((data: FloorPlan[]) => {
       // Process data to determine activeFloorPlanSrc for each plan
       this.floorPlans = data.map((plan) => {
@@ -95,13 +95,7 @@ export class MapPage implements AfterViewInit {
     });
   }
 
-  ngOnInit() {
-    this.http
-      .get<{ floorPlansOpen: boolean }>("assets/pages-config.json")
-      .subscribe((config) => {
-        this.floorPlansOpen = config.floorPlansOpen;
-      });
-  }
+  ngOnInit() {}
   async ngAfterViewInit() {
     const appEl = this.doc.querySelector("ion-app");
     let isDark = false;
